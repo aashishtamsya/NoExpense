@@ -1,0 +1,20 @@
+language: swift
+
+osx_image: 
+- xcode10.2
+
+env:
+- SCHEME=NoExpense SWIFT_VERSION=5.0
+
+cache: bundler
+
+before_install:
+  - gem update --system
+  - gem install bundler
+
+xcode_project: NoExpense.xcodeproj
+
+xcode_scheme: NoExpense
+
+script:
+  - bundle exec fastlane test_ci

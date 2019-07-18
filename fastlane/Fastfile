@@ -1,0 +1,42 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+fastlane_version "2.125.2"
+
+default_platform(:ios)
+
+platform :ios do
+  desc "Runs all the tests"
+    lane :tests do
+      test(scheme: "NoExpense", swift_version: "5.0")
+    end
+    
+  lane :test do |options|
+      _test(options)
+    end
+
+    private_lane :_test do |options|
+      if options[:scheme].include? "macOS"
+          scan(scheme: options[:scheme], clean: true, xcargs: "SWIFT_VERSION=#{options[:swift_version]}", destination: "platform=macOS")
+      else
+          scan(scheme: options[:scheme], clean: true, xcargs: "SWIFT_VERSION=#{options[:swift_version]}")
+      end
+    end
+    
+  desc "Test for Continous Intergation"
+  lane :test_ci do
+      test(scheme: ENV["SCHEME"], swift_version: ENV["SWIFT_VERSION"])
+    end
+end

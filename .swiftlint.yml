@@ -1,0 +1,18 @@
+disabled_rules:
+  - line_length
+  - trailing_whitespace
+  - type_name
+  - identifier_name
+  - force_try
+  - force_cast
+  - implicit_getter
+  - file_length
+  - type_body_length
+  
+excluded:
+ - Carthage/
+ - Pods/
+ - CacherTests/
+ - Examples/
+ - fastlane/
+ - Resources/

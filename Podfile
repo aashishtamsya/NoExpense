@@ -12,11 +12,12 @@ target 'NoExpense' do
   use_frameworks!
 
   # Pods for NoExpense
-
+  shared_pods
+  
   target 'NoExpenseTests' do
     inherit! :search_paths
     # Pods for testing
-    shared_pods
+    
   end
 
 end

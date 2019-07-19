@@ -54,10 +54,16 @@ struct TransactionService: TransactionServiceType {
   }
   
   @discardableResult
-  func update(transcation: TransactionItem, amount: String) -> Observable<TransactionItem> {
+  func update(transcation: TransactionItem, updateInfo: UpdateInfo) -> Observable<TransactionItem> {
     let result = withRealm("updating") { realm -> Observable<TransactionItem> in
       try realm.write {
-        transcation.amount = amount
+        transcation.amount = updateInfo.amount
+        if let note = updateInfo.note {
+          transcation.note = note
+        }
+        if let category = updateInfo.category {
+          transcation.category = category
+        }
       }
       return .just(transcation)
     }

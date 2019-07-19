@@ -12,7 +12,7 @@ import RxDataSources
 
 class TransactionItem: Object {
   @objc dynamic var uid = 0
-  @objc dynamic var category = ""
+  @objc dynamic var category = "Others"
   @objc dynamic var added = Date()
   @objc dynamic var note = ""
   @objc dynamic var amount = ""

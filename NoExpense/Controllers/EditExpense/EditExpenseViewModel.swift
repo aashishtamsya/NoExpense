@@ -11,13 +11,13 @@ import RxSwift
 import Action
 
 struct EditExpenseViewModel {
-  let amount: String
-  let onUpdate: Action<String, Void>!
+  let transaction: TransactionItem
+  let onUpdate: Action<UpdateInfo, Void>!
   let onCancel: CocoaAction?
   let disposeBag = DisposeBag()
   
-  init(transaction: TransactionItem, coordinator: SceneCoordinatorType, updateAction: Action<String, Void>, cancelAction: CocoaAction? = nil) {
-    amount = transaction.amount
+  init(transaction: TransactionItem, coordinator: SceneCoordinatorType, updateAction: Action<UpdateInfo, Void>, cancelAction: CocoaAction? = nil) {
+    self.transaction = transaction
     onUpdate = updateAction
     
     onUpdate.executionObservables

@@ -36,6 +36,12 @@ final class TransactionsViewController: ViewController, BindableType {
       .disposed(by: rx.disposeBag)
     
     newTransactionButton.rx.action = viewModel.onCreateTransaction()
+    
+    tableView.rx.itemSelected
+      .map { [unowned self] indexPath in
+        try! self.dataSource.model(at: indexPath) as! TransactionItem
+    }.subscribe(viewModel.editAction.inputs)
+    .disposed(by: rx.disposeBag)
   }
   
   fileprivate func configureDatasource() {

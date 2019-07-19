@@ -13,6 +13,7 @@ final class TransactionCell: UITableViewCell {
   @IBOutlet weak fileprivate var categoryImageView: UIImageView!
   @IBOutlet weak fileprivate var categoryLabel: UILabel!
   @IBOutlet weak fileprivate var amountLabel: UILabel!
+  @IBOutlet weak fileprivate var noteLabel: UILabel!
   
   private var disposeBag = DisposeBag()
   
@@ -28,6 +29,10 @@ final class TransactionCell: UITableViewCell {
     
     transaction.rx.observe(String.self, "category")
       .bind(to: categoryLabel.rx.text)
+      .disposed(by: disposeBag)
+    
+    transaction.rx.observe(String.self, "note")
+      .bind(to: noteLabel.rx.text)
       .disposed(by: disposeBag)
   }
 }

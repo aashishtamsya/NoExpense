@@ -28,9 +28,9 @@ struct TransactionsViewModel {
     }
   }
   
-  func onUpdateAmount(transcation: TransactionItem) -> Action<String, Void> {
-    return Action { newAmount in
-      return self.transactionService.update(transcation: transcation, amount: newAmount).map { _ in }
+  func onUpdate(transcation: TransactionItem) -> Action<UpdateInfo, Void> {
+    return Action { newUpdateInfo in
+      return self.transactionService.update(transcation: transcation, updateInfo: newUpdateInfo).map { _ in }
     }
   }
   
@@ -39,7 +39,7 @@ struct TransactionsViewModel {
       return self.transactionService
         .create(amount: "")
         .flatMap({ transaction -> Observable<Void> in
-          let editViewModel = EditExpenseViewModel(transaction: transaction, coordinator: self.sceneCoordinator, updateAction: self.onUpdateAmount(transcation: transaction), cancelAction: self.onDelete(transaction: transaction))
+          let editViewModel = EditExpenseViewModel(transaction: transaction, coordinator: self.sceneCoordinator, updateAction: self.onUpdate(transcation: transaction), cancelAction: self.onDelete(transaction: transaction))
           return self.sceneCoordinator.transition(to: Scene.editExpense(editViewModel), type: .modal)
             .asObservable()
             .map { _ in }
@@ -53,4 +53,13 @@ struct TransactionsViewModel {
         return [TransactionSection(model: "", items: results.toArray())]
     }
   }
+  
+  lazy var editAction: Action<TransactionItem, Swift.Never> = { this in
+    return Action { transaction in
+      let editViewModel = EditExpenseViewModel(transaction: transaction, coordinator: this.sceneCoordinator, updateAction: this.onUpdate(transcation: transaction))
+      return this.sceneCoordinator
+        .transition(to: Scene.editExpense(editViewModel), type: .modal)
+        .asObservable()
+    }
+  }(self)
 }

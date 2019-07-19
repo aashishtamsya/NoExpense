@@ -7,11 +7,16 @@
 //
 
 import Foundation
+import RealmSwift
 
-class TransactionItem {
-  var uid = 0
-  var type = ""
-  var added = Date()
-  var note = ""
-  var amount = ""
+class TransactionItem: Object {
+  @objc dynamic var uid = 0
+  @objc dynamic var type = ""
+  @objc dynamic var added = Date()
+  @objc dynamic var note = ""
+  @objc dynamic var amount = ""
+  
+  override class func primaryKey() -> String? {
+    return "uid"
+  }
 }

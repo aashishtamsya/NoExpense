@@ -5,6 +5,11 @@ inhibit_all_warnings!
 def shared_pods
   pod 'RxSwift', '~> 5.0.0'
   pod 'RxCocoa', '~> 5.0.0'
+  pod 'RxDataSources', '~> 4.0.1'
+  pod 'Action', '~> 4.0.0'
+  pod 'NSObject+Rx', '~> 5.0.0'
+  pod 'RealmSwift', '~> 3.17.1'
+  pod 'RxRealm', '~> 1.0.0'
 end
 
 target 'NoExpense' do

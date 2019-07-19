@@ -8,6 +8,11 @@
 
 import UIKit
 
-final class EditExpenseViewController: ViewController {
+final class EditExpenseViewController: ViewController, BindableType {
+
+  var viewModel: EditExpenseViewModel!
   
+  func bindViewModel() {
+    
+  }
 }

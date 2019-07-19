@@ -8,6 +8,13 @@
 
 import UIKit
 
-final class TransactionsViewController: ViewController {
+final class TransactionsViewController: ViewController, BindableType {
   
+  @IBOutlet weak fileprivate var tableView: UITableView!
+  
+  var viewModel: TransactionsViewModel!
+  
+  func bindViewModel() {
+    
+  }
 }

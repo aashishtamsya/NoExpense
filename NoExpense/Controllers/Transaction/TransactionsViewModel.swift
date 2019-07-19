@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct TransactionViewModel {
+struct TransactionsViewModel {
   let sceneCoordinator: SceneCoordinatorType
   let transactionService: TransactionServiceType
   

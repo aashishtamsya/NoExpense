@@ -9,6 +9,6 @@
 import Foundation
 
 enum Scene {
-  case expenses
-  case editExpense
+  case expenses(TransactionsViewModel)
+  case editExpense(EditExpenseViewModel)
 }

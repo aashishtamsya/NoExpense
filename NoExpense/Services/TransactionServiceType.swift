@@ -8,6 +8,7 @@
 
 import Foundation
 import RxSwift
+import RealmSwift
 
 enum TransactionServiceError: Error {
   case creationFailed
@@ -17,11 +18,13 @@ enum TransactionServiceError: Error {
 
 protocol TransactionServiceType {
   @discardableResult
-  func create(amount: Int) -> Observable<TransactionItem>
+  func create(amount: String) -> Observable<TransactionItem>
   
   @discardableResult
   func delete(transaction: TransactionItem) -> Observable<Bool>
   
   @discardableResult
-  func update(transcation: TransactionItem, amount: Int) -> Observable<TransactionItem>
+  func update(transcation: TransactionItem, amount: String) -> Observable<TransactionItem>
+  
+  func transactions() -> Observable<Results<TransactionItem>>
 }

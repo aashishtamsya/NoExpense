@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  TransactionsViewController.swift
 //  NoExpense
 //
 //  Created by Aashish Tamsya on 19/07/19.
@@ -8,5 +8,6 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+final class TransactionsViewController: ViewController {
+  
 }

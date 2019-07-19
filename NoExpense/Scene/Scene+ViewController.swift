@@ -12,8 +12,13 @@ import UIKit
 extension Scene {
   func viewController() -> UIViewController {
     switch self {
-    case .expenses, .editExpense:
-      let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ViewController") as! ViewController
+    case .expenses:
+      let navigationController = UIStoryboard(name: "Transactions", bundle: nil).instantiateViewController(withIdentifier: "TransactionsNavigationController") as! UINavigationController
+      let viewController = navigationController.viewControllers.first! as! TransactionsViewController
+      return viewController
+     case .editExpense:
+      let navigationController = UIStoryboard(name: "EditExpense", bundle: nil).instantiateViewController(withIdentifier: "EditExpenseNavigationController") as! UINavigationController
+      let viewController = navigationController.viewControllers.first! as! EditExpenseViewController
       return viewController
     }
   }

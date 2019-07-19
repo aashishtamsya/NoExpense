@@ -81,4 +81,3 @@ class SceneCoordinator: SceneCoordinatorType {
       .ignoreElements()
   }
 }
-

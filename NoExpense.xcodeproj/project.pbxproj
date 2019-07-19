@@ -11,7 +11,6 @@
 		C47D5CCC63BA8DA6E64F82AD /* Pods_NoExpenseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E55CDFE1B63E57D43E4ADA9F /* Pods_NoExpenseTests.framework */; };
 		FD2254B522E0FCAC006301CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2254B422E0FCAC006301CE /* AppDelegate.swift */; };
 		FD2254B722E0FCAC006301CE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2254B622E0FCAC006301CE /* ViewController.swift */; };
-		FD2254BA22E0FCAC006301CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD2254B822E0FCAC006301CE /* Main.storyboard */; };
 		FD2254BC22E0FCAE006301CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD2254BB22E0FCAE006301CE /* Assets.xcassets */; };
 		FD2254BF22E0FCAE006301CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD2254BD22E0FCAE006301CE /* LaunchScreen.storyboard */; };
 		FD2254CE22E0FDD8006301CE /* NoExpenseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2254CD22E0FDD8006301CE /* NoExpenseTests.swift */; };
@@ -20,6 +19,11 @@
 		FD2254DB22E108E4006301CE /* SceneCoordinatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2254DA22E108E4006301CE /* SceneCoordinatorType.swift */; };
 		FD2254DD22E10BE1006301CE /* Scene+ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2254DC22E10BE0006301CE /* Scene+ViewController.swift */; };
 		FD2254DF22E10C8C006301CE /* SceneTransitionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2254DE22E10C8C006301CE /* SceneTransitionType.swift */; };
+		FD2254E222E18F97006301CE /* UINavigationController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2254E122E18F97006301CE /* UINavigationController+Rx.swift */; };
+		FD2254E522E1911A006301CE /* EditExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2254E422E1911A006301CE /* EditExpenseViewController.swift */; };
+		FD2254E922E197FA006301CE /* TransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2254E822E197FA006301CE /* TransactionsViewController.swift */; };
+		FD2254EB22E198E6006301CE /* EditExpense.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD2254EA22E198E6006301CE /* EditExpense.storyboard */; };
+		FD2254ED22E1990F006301CE /* Transactions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD2254EC22E1990F006301CE /* Transactions.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +46,6 @@
 		FD2254B122E0FCAC006301CE /* NoExpense.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoExpense.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD2254B422E0FCAC006301CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FD2254B622E0FCAC006301CE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		FD2254B922E0FCAC006301CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FD2254BB22E0FCAE006301CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FD2254BE22E0FCAE006301CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FD2254C022E0FCAE006301CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -54,6 +57,11 @@
 		FD2254DA22E108E4006301CE /* SceneCoordinatorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneCoordinatorType.swift; sourceTree = "<group>"; };
 		FD2254DC22E10BE0006301CE /* Scene+ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Scene+ViewController.swift"; sourceTree = "<group>"; };
 		FD2254DE22E10C8C006301CE /* SceneTransitionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneTransitionType.swift; sourceTree = "<group>"; };
+		FD2254E122E18F97006301CE /* UINavigationController+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Rx.swift"; sourceTree = "<group>"; };
+		FD2254E422E1911A006301CE /* EditExpenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditExpenseViewController.swift; sourceTree = "<group>"; };
+		FD2254E822E197FA006301CE /* TransactionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewController.swift; sourceTree = "<group>"; };
+		FD2254EA22E198E6006301CE /* EditExpense.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditExpense.storyboard; sourceTree = "<group>"; };
+		FD2254EC22E1990F006301CE /* Transactions.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Transactions.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,10 +127,10 @@
 		FD2254B322E0FCAC006301CE /* NoExpense */ = {
 			isa = PBXGroup;
 			children = (
-				FD2254D522E1088F006301CE /* Scene */,
 				FD2254B422E0FCAC006301CE /* AppDelegate.swift */,
-				FD2254B622E0FCAC006301CE /* ViewController.swift */,
-				FD2254B822E0FCAC006301CE /* Main.storyboard */,
+				FD2254E022E18F7D006301CE /* Extensions */,
+				FD2254D522E1088F006301CE /* Scene */,
+				FD2254E322E190F5006301CE /* Controllers */,
 				FD2254BB22E0FCAE006301CE /* Assets.xcassets */,
 				FD2254BD22E0FCAE006301CE /* LaunchScreen.storyboard */,
 				FD2254C022E0FCAE006301CE /* Info.plist */,
@@ -151,6 +159,42 @@
 			path = Scene;
 			sourceTree = "<group>";
 		};
+		FD2254E022E18F7D006301CE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FD2254E122E18F97006301CE /* UINavigationController+Rx.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FD2254E322E190F5006301CE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FD2254B622E0FCAC006301CE /* ViewController.swift */,
+				FD2254E622E196D9006301CE /* Expense */,
+				FD2254E722E196FE006301CE /* Transaction */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		FD2254E622E196D9006301CE /* Expense */ = {
+			isa = PBXGroup;
+			children = (
+				FD2254E422E1911A006301CE /* EditExpenseViewController.swift */,
+				FD2254EA22E198E6006301CE /* EditExpense.storyboard */,
+			);
+			path = Expense;
+			sourceTree = "<group>";
+		};
+		FD2254E722E196FE006301CE /* Transaction */ = {
+			isa = PBXGroup;
+			children = (
+				FD2254E822E197FA006301CE /* TransactionsViewController.swift */,
+				FD2254EC22E1990F006301CE /* Transactions.storyboard */,
+			);
+			path = Transaction;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -163,6 +207,7 @@
 				FD2254AE22E0FCAC006301CE /* Frameworks */,
 				FD2254AF22E0FCAC006301CE /* Resources */,
 				FD2254C622E0FCD0006301CE /* Run Script - SwiftLint */,
+				CD9F11B287C3267EDF19E5A6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -181,7 +226,6 @@
 				FD2254C722E0FDD8006301CE /* Sources */,
 				FD2254C822E0FDD8006301CE /* Frameworks */,
 				FD2254C922E0FDD8006301CE /* Resources */,
-				81440C9A9EA563266FBB0320 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -237,8 +281,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD2254BF22E0FCAE006301CE /* LaunchScreen.storyboard in Resources */,
+				FD2254EB22E198E6006301CE /* EditExpense.storyboard in Resources */,
 				FD2254BC22E0FCAE006301CE /* Assets.xcassets in Resources */,
-				FD2254BA22E0FCAC006301CE /* Main.storyboard in Resources */,
+				FD2254ED22E1990F006301CE /* Transactions.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,21 +341,21 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		81440C9A9EA563266FBB0320 /* [CP] Embed Pods Frameworks */ = {
+		CD9F11B287C3267EDF19E5A6 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-NoExpenseTests/Pods-NoExpenseTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-NoExpense/Pods-NoExpense-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-NoExpenseTests/Pods-NoExpenseTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-NoExpense/Pods-NoExpense-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NoExpenseTests/Pods-NoExpenseTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NoExpense/Pods-NoExpense-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD2254C622E0FCD0006301CE /* Run Script - SwiftLint */ = {
@@ -339,8 +384,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD2254B722E0FCAC006301CE /* ViewController.swift in Sources */,
+				FD2254E222E18F97006301CE /* UINavigationController+Rx.swift in Sources */,
+				FD2254E522E1911A006301CE /* EditExpenseViewController.swift in Sources */,
 				FD2254DF22E10C8C006301CE /* SceneTransitionType.swift in Sources */,
 				FD2254B522E0FCAC006301CE /* AppDelegate.swift in Sources */,
+				FD2254E922E197FA006301CE /* TransactionsViewController.swift in Sources */,
 				FD2254DB22E108E4006301CE /* SceneCoordinatorType.swift in Sources */,
 				FD2254DD22E10BE1006301CE /* Scene+ViewController.swift in Sources */,
 				FD2254D722E1089A006301CE /* Scene.swift in Sources */,
@@ -367,14 +415,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		FD2254B822E0FCAC006301CE /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FD2254B922E0FCAC006301CE /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		FD2254BD22E0FCAE006301CE /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

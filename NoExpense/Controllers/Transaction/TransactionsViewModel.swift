@@ -10,6 +10,7 @@ import Foundation
 import RxSwift
 import RxDataSources
 import Action
+import RealmSwift
 
 typealias TransactionSection = AnimatableSectionModel<String, TransactionItem>
 
@@ -50,7 +51,16 @@ struct TransactionsViewModel {
   var sectionItems: Observable<[TransactionSection]> {
     return self.transactionService.transactions()
       .map { results in
-        return [TransactionSection(model: "", items: results.toArray())]
+        let sections = results.map {
+          return Calendar.current.startOfDay(for: $0.added)
+          }.reduce([]) { dates, date in
+            return dates.last == date ? dates : dates + [date]
+          }.compactMap { startDate -> (date: Date, items: Results<TransactionItem>)? in
+            let endDate = Calendar.current.date(byAdding: .day, value: 1, to: startDate)!
+            let items = results.filter("(added >= %@) AND (added < %@)", startDate, endDate)
+            return items.isEmpty ? nil : (date: startDate, items: items)
+        }
+        return sections.map { TransactionSection(model: $0.date.isToday ? "Today".localized : ( $0.date.friendlyDateString ?? ""), items: $0.items.toArray()) }
     }
   }
   

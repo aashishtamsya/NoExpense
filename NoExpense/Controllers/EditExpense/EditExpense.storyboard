@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="qMs-w1-Gea">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="144"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="184"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="amount" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dnW-ek-2fm">
                                         <rect key="frame" x="16" y="16" width="382" height="40"/>
@@ -43,6 +43,15 @@
                                         <rect key="frame" x="16" y="96" width="382" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="6Xu-L9-U0F"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Today" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V5p-3V-8IN">
+                                        <rect key="frame" x="16" y="136" width="382" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="4Ja-nM-jP5"/>
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -72,6 +81,7 @@
                         <outlet property="amountField" destination="dnW-ek-2fm" id="b5F-p1-RVc"/>
                         <outlet property="cancelBarButton" destination="99z-js-2La" id="w2K-vY-4ZC"/>
                         <outlet property="categoryField" destination="Cql-Tb-uql" id="o2I-QR-Y2c"/>
+                        <outlet property="dateField" destination="V5p-3V-8IN" id="i1S-7P-cj4"/>
                         <outlet property="doneBarButton" destination="UNH-EL-kU3" id="mqq-Tg-pKV"/>
                         <outlet property="noteField" destination="e5O-4f-VFa" id="wXv-dy-RzG"/>
                     </connections>

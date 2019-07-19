@@ -1,0 +1,37 @@
+/* 
+  Localizable.strings
+  NoExpense
+
+  Created by Aashish Tamsya on 19/07/19.
+  Copyright © 2019 Aashish Tamsya. All rights reserved.
+*/
+
+"AMomentAgo" = "a moment ago";
+"AYearAgo"   = "%d year ago";
+"YearsAgo"   = "%d years ago";
+"AMonthAgo"  = "%d month ago";
+"MonthsAgo"  = "%d months ago";
+"AWeekAgo"   = "%d week ago";
+"WeeksAgo"   = "%d weeks ago";
+"ADayAgo"    = "Yesterday";
+"DaysAgo"    = "%d days ago";
+"AHourAgo"   = "%d hour ago";
+"HoursAgo"   = "%d hours ago";
+"AMinuteAgo" = "%d minute ago";
+"MinutesAgo" = "%d minutes ago";
+
+"Today" = "Today";
+
+"AMomentBefore" = "in a moment";
+"AYearBefore"   = "in %d year";
+"YearsBefore"   = "in %d year";
+"AMonthBefore"  = "in %d month";
+"MonthsBefore"  = "in %d months";
+"AWeekBefore"   = "in %d week";
+"WeeksBefore"   = "in %d weeks";
+"ADayBefore"    = "Tomorrow";
+"DaysBefore"    = "in %d days";
+"AHourBefore"   = "in %d hour";
+"HoursBefore"   = "in %d hours";
+"AMinuteBefore" = "in %d minute";
+"MinutesBefore" = "in %d minutes";

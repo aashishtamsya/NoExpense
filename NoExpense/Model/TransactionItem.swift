@@ -8,15 +8,22 @@
 
 import Foundation
 import RealmSwift
+import RxDataSources
 
 class TransactionItem: Object {
   @objc dynamic var uid = 0
-  @objc dynamic var type = ""
+  @objc dynamic var category = ""
   @objc dynamic var added = Date()
   @objc dynamic var note = ""
   @objc dynamic var amount = ""
   
   override class func primaryKey() -> String? {
     return "uid"
+  }
+}
+
+extension TransactionItem: IdentifiableType {
+  var identity: Int {
+    return self.isInvalidated ? 0 : uid
   }
 }

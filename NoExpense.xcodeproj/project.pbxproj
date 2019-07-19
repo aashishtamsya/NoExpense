@@ -30,6 +30,8 @@
 		FD2254F722E1A02E006301CE /* BindableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2254F622E1A02E006301CE /* BindableType.swift */; };
 		FD2254F922E1A0C4006301CE /* EditExpenseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2254F822E1A0C4006301CE /* EditExpenseViewModel.swift */; };
 		FD2254FB22E1A553006301CE /* TransactionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2254FA22E1A553006301CE /* TransactionService.swift */; };
+		FD2254FF22E1B67C006301CE /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2254FD22E1B67C006301CE /* TransactionCell.swift */; };
+		FD22550022E1B67C006301CE /* TransactionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD2254FE22E1B67C006301CE /* TransactionCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +76,8 @@
 		FD2254F622E1A02E006301CE /* BindableType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindableType.swift; sourceTree = "<group>"; };
 		FD2254F822E1A0C4006301CE /* EditExpenseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditExpenseViewModel.swift; sourceTree = "<group>"; };
 		FD2254FA22E1A553006301CE /* TransactionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionService.swift; sourceTree = "<group>"; };
+		FD2254FD22E1B67C006301CE /* TransactionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCell.swift; sourceTree = "<group>"; };
+		FD2254FE22E1B67C006301CE /* TransactionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +149,7 @@
 				FD2254F322E19B47006301CE /* Model */,
 				FD2254D522E1088F006301CE /* Scene */,
 				FD2254F022E19AE6006301CE /* Services */,
+				FD2254FC22E1B657006301CE /* Cells */,
 				FD2254BB22E0FCAE006301CE /* Assets.xcassets */,
 				FD2254BD22E0FCAE006301CE /* LaunchScreen.storyboard */,
 				FD2254C022E0FCAE006301CE /* Info.plist */,
@@ -227,6 +232,15 @@
 				FD2254F622E1A02E006301CE /* BindableType.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		FD2254FC22E1B657006301CE /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				FD2254FD22E1B67C006301CE /* TransactionCell.swift */,
+				FD2254FE22E1B67C006301CE /* TransactionCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -318,6 +332,7 @@
 				FD2254EB22E198E6006301CE /* EditExpense.storyboard in Resources */,
 				FD2254BC22E0FCAE006301CE /* Assets.xcassets in Resources */,
 				FD2254ED22E1990F006301CE /* Transactions.storyboard in Resources */,
+				FD22550022E1B67C006301CE /* TransactionCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,6 +434,7 @@
 			files = (
 				FD2254B722E0FCAC006301CE /* ViewController.swift in Sources */,
 				FD2254E222E18F97006301CE /* UINavigationController+Rx.swift in Sources */,
+				FD2254FF22E1B67C006301CE /* TransactionCell.swift in Sources */,
 				FD2254E522E1911A006301CE /* EditExpenseViewController.swift in Sources */,
 				FD2254DF22E10C8C006301CE /* SceneTransitionType.swift in Sources */,
 				FD2254B522E0FCAC006301CE /* AppDelegate.swift in Sources */,

@@ -17,8 +17,8 @@ protocol BindableType {
   func bindViewModel()
 }
 
-extension BindableType where Self: ViewController {
-  mutating func bindViewModel(to model: Self.ViewModelType) {
+extension BindableType where Self: UIViewController {
+  mutating func bind(viewModel model: Self.ViewModelType) {
     viewModel = model
     loadViewIfNeeded()
     bindViewModel() // ensures viewmodel is set once the view has loaded.

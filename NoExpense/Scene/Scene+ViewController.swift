@@ -14,14 +14,14 @@ extension Scene {
     switch self {
     case .expenses(let viewModel):
       let navigationController = UIStoryboard(name: "Transactions", bundle: nil).instantiateViewController(withIdentifier: "TransactionsNavigationController") as! UINavigationController
-      let viewController = navigationController.viewControllers.first! as! TransactionsViewController
-      viewController.bindViewModel(to: viewModel)
-      return viewController
+      var viewController = navigationController.viewControllers.first! as! TransactionsViewController
+      viewController.bind(viewModel: viewModel)
+      return navigationController
     case .editExpense(let viewModel):
       let navigationController = UIStoryboard(name: "EditExpense", bundle: nil).instantiateViewController(withIdentifier: "EditExpenseNavigationController") as! UINavigationController
-      let viewController = navigationController.viewControllers.first! as! EditExpenseViewController
-      viewController.bindViewModel(to: viewModel)
-      return viewController
+      var viewController = navigationController.viewControllers.first! as! EditExpenseViewController
+      viewController.bind(viewModel: viewModel)
+      return navigationController
     }
   }
 }

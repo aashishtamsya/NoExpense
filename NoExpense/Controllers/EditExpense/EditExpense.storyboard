@@ -15,7 +15,7 @@
             <objects>
                 <viewController storyboardIdentifier="EditExpenseViewController" id="zdC-Zs-Tne" customClass="EditExpenseViewController" customModule="NoExpense" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Oc5-dg-T5v">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="64J-x2-5Fq"/>
@@ -31,7 +31,7 @@
             <objects>
                 <navigationController storyboardIdentifier="EditExpenseNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="FVo-NV-gty" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="oQ4-CW-CKQ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="oQ4-CW-CKQ">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.11372549019607843" green="0.61176470588235299" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

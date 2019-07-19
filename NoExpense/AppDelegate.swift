@@ -13,7 +13,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   var window: UIWindow?
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    // Override point for customization after application launch.
+    let service = TransactionService()
+    let sceneCoordinator = SceneCoordinator(window: window!)
+    let transactionsViewModel = TransactionsViewModel(transactionService: service, coordinator: sceneCoordinator)
+    let firstScene = Scene.expenses(transactionsViewModel)
+    sceneCoordinator.transition(to: firstScene, type: .root)
     return true
   }
 }

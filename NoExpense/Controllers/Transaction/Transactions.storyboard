@@ -15,11 +15,11 @@
             <objects>
                 <viewController storyboardIdentifier="TransactionsViewController" id="gdg-lN-Ldl" customClass="TransactionsViewController" customModule="NoExpense" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="twZ-k9-Onr">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="q9b-DD-eIG">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
@@ -41,6 +41,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="newTransactionButton" destination="5ex-Ii-9v0" id="JVH-fw-Dfq"/>
                         <outlet property="tableView" destination="q9b-DD-eIG" id="065-rW-w75"/>
                     </connections>
                 </viewController>
@@ -53,7 +54,7 @@
             <objects>
                 <navigationController storyboardIdentifier="TransactionsNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="pqQ-hF-kwA" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1Mq-22-nZL">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="1Mq-22-nZL">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.1137254902" green="0.61176470589999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -72,4 +72,10 @@ struct TransactionsViewModel {
         .asObservable()
     }
   }(self)
+  
+  lazy var deleteAction: Action<TransactionItem, Void> = { (service: TransactionServiceType) in
+    return Action { transaction in
+      return service.delete(transaction: transaction)
+    }
+  }(self.transactionService)
 }

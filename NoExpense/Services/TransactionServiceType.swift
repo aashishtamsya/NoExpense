@@ -1,0 +1,27 @@
+//
+//  TransactionServiceType.swift
+//  NoExpense
+//
+//  Created by Aashish Tamsya on 19/07/19.
+//  Copyright © 2019 Aashish Tamsya. All rights reserved.
+//
+
+import Foundation
+import RxSwift
+
+enum TransactionServiceError: Error {
+  case creationFailed
+  case updateFailed(TransactionItem)
+  case deletionFailed(TransactionItem)
+}
+
+protocol TransactionServiceType {
+  @discardableResult
+  func create(amount: Int) -> Observable<TransactionItem>
+  
+  @discardableResult
+  func delete(transaction: TransactionItem) -> Observable<Bool>
+  
+  @discardableResult
+  func update(transcation: TransactionItem, amount: Int) -> Observable<TransactionItem>
+}

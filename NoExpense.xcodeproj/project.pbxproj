@@ -24,6 +24,9 @@
 		FD2254E922E197FA006301CE /* TransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2254E822E197FA006301CE /* TransactionsViewController.swift */; };
 		FD2254EB22E198E6006301CE /* EditExpense.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD2254EA22E198E6006301CE /* EditExpense.storyboard */; };
 		FD2254ED22E1990F006301CE /* Transactions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD2254EC22E1990F006301CE /* Transactions.storyboard */; };
+		FD2254EF22E19AB5006301CE /* TransactionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2254EE22E19AB5006301CE /* TransactionsViewModel.swift */; };
+		FD2254F222E19B29006301CE /* TransactionServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2254F122E19B29006301CE /* TransactionServiceType.swift */; };
+		FD2254F522E19B59006301CE /* TransactionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2254F422E19B59006301CE /* TransactionItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +65,9 @@
 		FD2254E822E197FA006301CE /* TransactionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewController.swift; sourceTree = "<group>"; };
 		FD2254EA22E198E6006301CE /* EditExpense.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditExpense.storyboard; sourceTree = "<group>"; };
 		FD2254EC22E1990F006301CE /* Transactions.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Transactions.storyboard; sourceTree = "<group>"; };
+		FD2254EE22E19AB5006301CE /* TransactionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewModel.swift; sourceTree = "<group>"; };
+		FD2254F122E19B29006301CE /* TransactionServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionServiceType.swift; sourceTree = "<group>"; };
+		FD2254F422E19B59006301CE /* TransactionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,9 +134,11 @@
 			isa = PBXGroup;
 			children = (
 				FD2254B422E0FCAC006301CE /* AppDelegate.swift */,
-				FD2254E022E18F7D006301CE /* Extensions */,
-				FD2254D522E1088F006301CE /* Scene */,
 				FD2254E322E190F5006301CE /* Controllers */,
+				FD2254E022E18F7D006301CE /* Extensions */,
+				FD2254F322E19B47006301CE /* Model */,
+				FD2254D522E1088F006301CE /* Scene */,
+				FD2254F022E19AE6006301CE /* Services */,
 				FD2254BB22E0FCAE006301CE /* Assets.xcassets */,
 				FD2254BD22E0FCAE006301CE /* LaunchScreen.storyboard */,
 				FD2254C022E0FCAE006301CE /* Info.plist */,
@@ -171,28 +179,45 @@
 			isa = PBXGroup;
 			children = (
 				FD2254B622E0FCAC006301CE /* ViewController.swift */,
-				FD2254E622E196D9006301CE /* Expense */,
 				FD2254E722E196FE006301CE /* Transaction */,
+				FD2254E622E196D9006301CE /* EditExpense */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		FD2254E622E196D9006301CE /* Expense */ = {
+		FD2254E622E196D9006301CE /* EditExpense */ = {
 			isa = PBXGroup;
 			children = (
 				FD2254E422E1911A006301CE /* EditExpenseViewController.swift */,
 				FD2254EA22E198E6006301CE /* EditExpense.storyboard */,
 			);
-			path = Expense;
+			path = EditExpense;
 			sourceTree = "<group>";
 		};
 		FD2254E722E196FE006301CE /* Transaction */ = {
 			isa = PBXGroup;
 			children = (
+				FD2254EE22E19AB5006301CE /* TransactionsViewModel.swift */,
 				FD2254E822E197FA006301CE /* TransactionsViewController.swift */,
 				FD2254EC22E1990F006301CE /* Transactions.storyboard */,
 			);
 			path = Transaction;
+			sourceTree = "<group>";
+		};
+		FD2254F022E19AE6006301CE /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FD2254F122E19B29006301CE /* TransactionServiceType.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		FD2254F322E19B47006301CE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FD2254F422E19B59006301CE /* TransactionItem.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -388,10 +413,13 @@
 				FD2254E522E1911A006301CE /* EditExpenseViewController.swift in Sources */,
 				FD2254DF22E10C8C006301CE /* SceneTransitionType.swift in Sources */,
 				FD2254B522E0FCAC006301CE /* AppDelegate.swift in Sources */,
+				FD2254F522E19B59006301CE /* TransactionItem.swift in Sources */,
 				FD2254E922E197FA006301CE /* TransactionsViewController.swift in Sources */,
 				FD2254DB22E108E4006301CE /* SceneCoordinatorType.swift in Sources */,
 				FD2254DD22E10BE1006301CE /* Scene+ViewController.swift in Sources */,
+				FD2254F222E19B29006301CE /* TransactionServiceType.swift in Sources */,
 				FD2254D722E1089A006301CE /* Scene.swift in Sources */,
+				FD2254EF22E19AB5006301CE /* TransactionsViewModel.swift in Sources */,
 				FD2254D922E108CF006301CE /* SceneCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

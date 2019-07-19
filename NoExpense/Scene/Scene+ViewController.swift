@@ -16,7 +16,7 @@ extension Scene {
       let navigationController = UIStoryboard(name: "Transactions", bundle: nil).instantiateViewController(withIdentifier: "TransactionsNavigationController") as! UINavigationController
       let viewController = navigationController.viewControllers.first! as! TransactionsViewController
       return viewController
-     case .editExpense:
+    case .editExpense:
       let navigationController = UIStoryboard(name: "EditExpense", bundle: nil).instantiateViewController(withIdentifier: "EditExpenseNavigationController") as! UINavigationController
       let viewController = navigationController.viewControllers.first! as! EditExpenseViewController
       return viewController

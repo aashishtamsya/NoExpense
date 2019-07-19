@@ -9,7 +9,7 @@
 import UIKit
 
 enum CategoryType: String {
-  case travel, family, entertainment, home, food, drink, bills, car, utility, shopping, healthcare, clothing, vegetables, accommodation, other, transport, hobbies, education, pets, kids, vacation, gifts
+  case other, travel, family, entertainment, home, food, drink, bills, car, utility, shopping, healthcare, clothing, vegetables, accommodation, transport, hobbies, education, pets, kids, vacation, gifts
   
   var image: UIImage? {
     get {
@@ -17,7 +17,7 @@ enum CategoryType: String {
     }
   }
   
-  static let items: [CategoryType] = [.travel, .family, .entertainment, .home, .food, .drink, .bills, .car, .utility, .shopping, .healthcare, .clothing, .vegetables, .accommodation, .other, .transport, .hobbies, .education, .pets, .kids, .vacation, .gifts]
+  static let items: [CategoryType] = [.other, .travel, .family, .entertainment, .home, .food, .drink, .bills, .car, .utility, .shopping, .healthcare, .clothing, .vegetables, .accommodation, .transport, .hobbies, .education, .pets, .kids, .vacation, .gifts]
   
   static let stringValues: [String] = CategoryType.items.map { $0.rawValue.capitalized }
 }

@@ -49,7 +49,8 @@ final class TransactionsViewController: ViewController, BindableType {
       let cell = tableView.dequeueReusableCell(withIdentifier: "TransactionCell", for: indexPath) as! TransactionCell
       cell.configure(with: item)
       return cell
+    }, titleForHeaderInSection: { dataSource, index in
+      dataSource.sectionModels[index].model
     })
-    
   }
 }

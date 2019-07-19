@@ -33,6 +33,7 @@ final class EditExpenseViewController: ViewController, BindableType {
     categoryField.text = viewModel.transaction.category
     noteField.text = viewModel.transaction.note
     dateField.text = viewModel.transaction.added.friendlyDateString
+    datePicker.date = viewModel.transaction.added
     
     cancelBarButton.rx.action = viewModel.onCancel
     
@@ -55,22 +56,12 @@ final class EditExpenseViewController: ViewController, BindableType {
     amountField.becomeFirstResponder()
   }
 }
-
-//private extension EditExpenseViewController {
-//  @objc func dateChanged(_ datePicker: UIDatePicker) {
-//    let dateString = DateFormatter.cachedFormatterWithFormat(format: apiDateFormat).string(from: datePicker.date)
-//
-//    let output = BehaviorRelay<String>()
-//
-//
-//
-//  }
-//}
-
+// MARK: - Private Methods
 private extension EditExpenseViewController {
   func configureDateField() {
-     datePicker.datePickerMode = .date
-//    datePicker?.addTarget(self, action: #selector(EditExpenseViewController.dateChanged(_:)), for: .valueChanged)
+    datePicker.datePickerMode = .date
+    datePicker.maximumDate = Date().addingTimeInterval(31556926)
+    datePicker.minimumDate = Date().addingTimeInterval(-31556926)
     dateField.inputView = datePicker
   }
 }

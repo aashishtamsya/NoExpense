@@ -76,7 +76,7 @@ struct TransactionService: TransactionServiceType {
   func transactions() -> Observable<Results<TransactionItem>> {
     let result = withRealm("getting transcations") { realm -> Observable<Results<TransactionItem>> in
       let realm = try Realm()
-      let transactions = realm.objects(TransactionItem.self).sorted(byKeyPath: "added", ascending: false)
+      let transactions = realm.objects(TransactionItem.self).sorted(byKeyPath: "added", ascending: false)    
       return Observable.collection(from: transactions)
     }
     return result ?? .empty()

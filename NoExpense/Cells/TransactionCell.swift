@@ -34,5 +34,10 @@ final class TransactionCell: UITableViewCell {
     transaction.rx.observe(String.self, "note")
       .bind(to: noteLabel.rx.text)
       .disposed(by: disposeBag)
+    
+    transaction.rx.observe(String.self, "category")
+      .map { CategoryType(rawValue: $0?.lowercased() ?? "")?.image }
+      .bind(to: categoryImageView.rx.image)
+      .disposed(by: disposeBag)
   }
 }

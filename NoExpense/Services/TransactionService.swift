@@ -64,6 +64,9 @@ struct TransactionService: TransactionServiceType {
         if let category = updateInfo.category {
           transcation.category = category
         }
+        if let added = updateInfo.added {
+          transcation.added = added
+        }
       }
       return .just(transcation)
     }

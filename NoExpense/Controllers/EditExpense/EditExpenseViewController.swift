@@ -18,28 +18,59 @@ final class EditExpenseViewController: ViewController, BindableType {
   @IBOutlet weak fileprivate var amountField: UITextField!
   @IBOutlet weak fileprivate var categoryField: UITextField!
   @IBOutlet weak fileprivate var noteField: UITextField!
+  @IBOutlet weak fileprivate var dateField: UITextField!
   
   var viewModel: EditExpenseViewModel!
+  fileprivate var datePicker = UIDatePicker()
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    configureDateField()
+  }
   
   func bindViewModel() {
     amountField.text = viewModel.transaction.amount
     categoryField.text = viewModel.transaction.category
     noteField.text = viewModel.transaction.note
+    dateField.text = viewModel.transaction.added.friendlyDateString
     
     cancelBarButton.rx.action = viewModel.onCancel
     
-    let v = Observable.combineLatest(amountField.rx.text, categoryField.rx.text, noteField.rx.text) { (amount, category, note) -> UpdateInfo in
-      return UpdateInfo(amount: amount ?? "", category: category, note: note)
+    let v = Observable.combineLatest(amountField.rx.text, categoryField.rx.text, noteField.rx.text, datePicker.rx.date) { (amount, category, note, date) -> UpdateInfo in
+      return UpdateInfo(amount: amount ?? "", category: category, note: note, added: date)
     }
     
     doneBarButton.rx.tap
       .withLatestFrom(v)
       .subscribe(viewModel.onUpdate.inputs)
       .disposed(by: rx.disposeBag)
+    
+    datePicker.rx.date
+      .map { $0.friendlyDateString ?? "Today" }.bind(to: dateField.rx.text)
+      .disposed(by: rx.disposeBag)
   }
   
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
     amountField.becomeFirstResponder()
+  }
+}
+
+//private extension EditExpenseViewController {
+//  @objc func dateChanged(_ datePicker: UIDatePicker) {
+//    let dateString = DateFormatter.cachedFormatterWithFormat(format: apiDateFormat).string(from: datePicker.date)
+//
+//    let output = BehaviorRelay<String>()
+//
+//
+//
+//  }
+//}
+
+private extension EditExpenseViewController {
+  func configureDateField() {
+     datePicker.datePickerMode = .date
+//    datePicker?.addTarget(self, action: #selector(EditExpenseViewController.dateChanged(_:)), for: .valueChanged)
+    dateField.inputView = datePicker
   }
 }

@@ -33,6 +33,10 @@
 		FD2254FF22E1B67C006301CE /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2254FD22E1B67C006301CE /* TransactionCell.swift */; };
 		FD22550022E1B67C006301CE /* TransactionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD2254FE22E1B67C006301CE /* TransactionCell.xib */; };
 		FD22550422E1DEAF006301CE /* UpdateInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD22550322E1DEAF006301CE /* UpdateInfo.swift */; };
+		FD22550822E1EA71006301CE /* DateFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD22550722E1EA71006301CE /* DateFormatter+Extensions.swift */; };
+		FD22550A22E1EAB3006301CE /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD22550922E1EAB3006301CE /* Date+Extensions.swift */; };
+		FD22550D22E1EAFC006301CE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FD22550C22E1EAFC006301CE /* Localizable.strings */; };
+		FD22550F22E1ED3D006301CE /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD22550E22E1ED3D006301CE /* String+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +84,10 @@
 		FD2254FD22E1B67C006301CE /* TransactionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCell.swift; sourceTree = "<group>"; };
 		FD2254FE22E1B67C006301CE /* TransactionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionCell.xib; sourceTree = "<group>"; };
 		FD22550322E1DEAF006301CE /* UpdateInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateInfo.swift; sourceTree = "<group>"; };
+		FD22550722E1EA71006301CE /* DateFormatter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extensions.swift"; sourceTree = "<group>"; };
+		FD22550922E1EAB3006301CE /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		FD22550C22E1EAFC006301CE /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		FD22550E22E1ED3D006301CE /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +153,7 @@
 		FD2254B322E0FCAC006301CE /* NoExpense */ = {
 			isa = PBXGroup;
 			children = (
+				FD22550B22E1EADB006301CE /* Localization */,
 				FD2254B422E0FCAC006301CE /* AppDelegate.swift */,
 				FD2254E322E190F5006301CE /* Controllers */,
 				FD2254E022E18F7D006301CE /* Extensions */,
@@ -184,6 +193,9 @@
 			isa = PBXGroup;
 			children = (
 				FD2254E122E18F97006301CE /* UINavigationController+Rx.swift */,
+				FD22550722E1EA71006301CE /* DateFormatter+Extensions.swift */,
+				FD22550922E1EAB3006301CE /* Date+Extensions.swift */,
+				FD22550E22E1ED3D006301CE /* String+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -244,6 +256,14 @@
 				FD2254FE22E1B67C006301CE /* TransactionCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		FD22550B22E1EADB006301CE /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				FD22550C22E1EAFC006301CE /* Localizable.strings */,
+			);
+			path = Localization;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -332,6 +352,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD2254BF22E0FCAE006301CE /* LaunchScreen.storyboard in Resources */,
+				FD22550D22E1EAFC006301CE /* Localizable.strings in Resources */,
 				FD2254EB22E198E6006301CE /* EditExpense.storyboard in Resources */,
 				FD2254BC22E0FCAE006301CE /* Assets.xcassets in Resources */,
 				FD2254ED22E1990F006301CE /* Transactions.storyboard in Resources */,
@@ -436,6 +457,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD2254B722E0FCAC006301CE /* ViewController.swift in Sources */,
+				FD22550F22E1ED3D006301CE /* String+Extensions.swift in Sources */,
+				FD22550822E1EA71006301CE /* DateFormatter+Extensions.swift in Sources */,
 				FD2254E222E18F97006301CE /* UINavigationController+Rx.swift in Sources */,
 				FD2254FF22E1B67C006301CE /* TransactionCell.swift in Sources */,
 				FD2254E522E1911A006301CE /* EditExpenseViewController.swift in Sources */,
@@ -447,6 +470,7 @@
 				FD2254DD22E10BE1006301CE /* Scene+ViewController.swift in Sources */,
 				FD2254F222E19B29006301CE /* TransactionServiceType.swift in Sources */,
 				FD2254FB22E1A553006301CE /* TransactionService.swift in Sources */,
+				FD22550A22E1EAB3006301CE /* Date+Extensions.swift in Sources */,
 				FD22550422E1DEAF006301CE /* UpdateInfo.swift in Sources */,
 				FD2254F922E1A0C4006301CE /* EditExpenseViewModel.swift in Sources */,
 				FD2254F722E1A02E006301CE /* BindableType.swift in Sources */,

@@ -1,0 +1,21 @@
+/* 
+  Localizable.strings
+  NoExpense
+
+  Created by Aashish Tamsya on 19/07/19.
+  Copyright © 2019 Aashish Tamsya. All rights reserved.
+*/
+
+"AMomentAgo" = "a moment ago";
+"AYearAgo"   = "%d year ago";
+"YearsAgo"   = "%d years ago";
+"AMonthAgo"  = "%d month ago";
+"MonthsAgo"  = "%d months ago";
+"AWeekAgo"   = "%d week ago";
+"WeeksAgo"   = "%d weeks ago";
+"ADayAgo"    = "%d day ago";
+"DaysAgo"    = "%d days ago";
+"AHourAgo"   = "%d hour ago";
+"HoursAgo"   = "%d hours ago";
+"AMinuteAgo" = "%d minute ago";
+"MinutesAgo" = "%d minutes ago";

@@ -1,5 +1,5 @@
 //
-//  UpdateInfo.swift
+//  String+Extensions.swift
 //  NoExpense
 //
 //  Created by Aashish Tamsya on 19/07/19.
@@ -8,9 +8,6 @@
 
 import Foundation
 
-struct UpdateInfo {
-  var amount: String
-  var category: String?
-  var note: String?
-  var added: Date?
+extension String {
+  var localized: String { get { return NSLocalizedString(self, comment: "") } }
 }

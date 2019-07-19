@@ -28,6 +28,7 @@ final class TransactionsViewController: ViewController, BindableType {
     tableView.register(UINib(nibName: "TransactionCell", bundle: nil), forCellReuseIdentifier: "TransactionCell")
     
     configureDatasource()
+    setEditing(true, animated: false)
   }
   
   func bindViewModel() {
@@ -40,8 +41,16 @@ final class TransactionsViewController: ViewController, BindableType {
     tableView.rx.itemSelected
       .map { [unowned self] indexPath in
         try! self.dataSource.model(at: indexPath) as! TransactionItem
-    }.subscribe(viewModel.editAction.inputs)
-    .disposed(by: rx.disposeBag)
+      }
+      .subscribe(viewModel.editAction.inputs)
+      .disposed(by: rx.disposeBag)
+    
+    tableView.rx.itemDeleted
+      .map { [unowned self] indexPath in
+        try! self.dataSource.model(at: indexPath) as! TransactionItem
+      }
+      .subscribe(viewModel.deleteAction.inputs)
+      .disposed(by: rx.disposeBag)
   }
   
   fileprivate func configureDatasource() {
@@ -51,6 +60,6 @@ final class TransactionsViewController: ViewController, BindableType {
       return cell
     }, titleForHeaderInSection: { dataSource, index in
       dataSource.sectionModels[index].model
-    })
+    }, canEditRowAtIndexPath: { _, _ in true })
   }
 }

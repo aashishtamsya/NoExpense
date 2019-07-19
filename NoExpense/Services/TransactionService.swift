@@ -43,8 +43,8 @@ struct TransactionService: TransactionServiceType {
   }
   
   @discardableResult
-  func delete(transaction: TransactionItem) -> Observable<Bool> {
-    let result = withRealm("deleting") { realm -> Observable<Bool> in
+  func delete(transaction: TransactionItem) -> Observable<Void> {
+    let result = withRealm("deleting") { realm -> Observable<Void> in
       try realm.write {
         realm.delete(transaction)
       }

@@ -21,7 +21,7 @@ protocol TransactionServiceType {
   func create(amount: String) -> Observable<TransactionItem>
   
   @discardableResult
-  func delete(transaction: TransactionItem) -> Observable<Bool>
+  func delete(transaction: TransactionItem) -> Observable<Void>
   
   @discardableResult
   func update(transcation: TransactionItem, updateInfo: UpdateInfo) -> Observable<TransactionItem>

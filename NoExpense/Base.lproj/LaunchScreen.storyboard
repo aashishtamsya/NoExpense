@@ -18,17 +18,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_launcher" translatesAutoresizingMaskIntoConstraints="NO" id="pwS-rC-lGc">
+                                <rect key="frame" x="0.0" y="420" width="414" height="482"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.transform.rotation.z">
+                                        <real key="value" value="0.29999999999999999"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Expense" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dcY-fc-kxx">
-                                <rect key="frame" x="107.5" y="432.5" width="199" height="41"/>
+                                <rect key="frame" x="107.5" y="284" width="199" height="41"/>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="34"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" red="0.1137254902" green="0.61176470589999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.1137254902" green="0.61176470589999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="dcY-fc-kxx" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="hj4-aD-2hZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pwS-rC-lGc" secondAttribute="trailing" id="87O-Ca-MgU"/>
+                            <constraint firstItem="dcY-fc-kxx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="240" id="A7z-24-uoN"/>
+                            <constraint firstItem="pwS-rC-lGc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="X2Y-Qf-fS3"/>
                             <constraint firstItem="dcY-fc-kxx" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="q0A-7R-4vn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="pwS-rC-lGc" secondAttribute="bottom" constant="-40" id="uzM-Q5-lxD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -38,4 +49,7 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bg_launcher" width="400" height="482"/>
+    </resources>
 </document>

@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Transactions View Controller-->
+        <!--Transactions-->
         <scene sceneID="tLq-Hq-kEC">
             <objects>
                 <viewController storyboardIdentifier="TransactionsViewController" id="gdg-lN-Ldl" customClass="TransactionsViewController" customModule="NoExpense" customModuleProvider="target" sceneMemberID="viewController">
@@ -72,20 +72,24 @@
                                     </tableView>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S4W-1W-5XH">
+                                <rect key="frame" x="8" y="8" width="199" height="64"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="S4W-1W-5XH" firstAttribute="width" secondItem="MNn-DJ-yXW" secondAttribute="width" id="CgU-iO-7fu"/>
                             <constraint firstItem="9YE-uD-u4n" firstAttribute="top" secondItem="JFB-Ab-Wgp" secondAttribute="top" id="Pp5-Gu-PA0"/>
+                            <constraint firstItem="S4W-1W-5XH" firstAttribute="centerY" secondItem="MNn-DJ-yXW" secondAttribute="centerY" id="ReL-BY-xnT"/>
                             <constraint firstItem="JFB-Ab-Wgp" firstAttribute="trailing" secondItem="9YE-uD-u4n" secondAttribute="trailing" id="dOO-fc-FOf"/>
                             <constraint firstItem="JFB-Ab-Wgp" firstAttribute="bottom" secondItem="9YE-uD-u4n" secondAttribute="bottom" id="fY7-PF-qh6"/>
+                            <constraint firstItem="S4W-1W-5XH" firstAttribute="centerX" secondItem="MNn-DJ-yXW" secondAttribute="centerX" id="hL0-Wr-SDW"/>
                             <constraint firstItem="9YE-uD-u4n" firstAttribute="leading" secondItem="JFB-Ab-Wgp" secondAttribute="leading" id="tP9-Sb-fF2"/>
+                            <constraint firstItem="S4W-1W-5XH" firstAttribute="height" secondItem="MNn-DJ-yXW" secondAttribute="height" id="udw-aa-k55"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="JFB-Ab-Wgp"/>
                     </view>
-                    <navigationItem key="navigationItem" id="ZZq-eO-0hk">
-                        <barButtonItem key="leftBarButtonItem" systemItem="organize" id="TRf-9t-wIw">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </barButtonItem>
+                    <navigationItem key="navigationItem" title="Transactions" id="ZZq-eO-0hk">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="5ex-Ii-9v0">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </barButtonItem>
@@ -94,6 +98,7 @@
                         <outlet property="newTransactionButton" destination="5ex-Ii-9v0" id="JVH-fw-Dfq"/>
                         <outlet property="tableView" destination="q9b-DD-eIG" id="065-rW-w75"/>
                         <outlet property="thisMonthExpenseLabel" destination="PZT-C2-bYg" id="KAe-WJ-ebL"/>
+                        <outlet property="totalExpenseButton" destination="S4W-1W-5XH" id="LGE-8k-4qs"/>
                         <outlet property="totalExpenseLabel" destination="c71-76-SNV" id="kF5-T2-KX5"/>
                     </connections>
                 </viewController>

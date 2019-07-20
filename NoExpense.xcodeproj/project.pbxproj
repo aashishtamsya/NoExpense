@@ -37,6 +37,9 @@
 		FD22550D22E1EAFC006301CE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FD22550C22E1EAFC006301CE /* Localizable.strings */; };
 		FD22550F22E1ED3D006301CE /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD22550E22E1ED3D006301CE /* String+Extensions.swift */; };
 		FD22551322E208C8006301CE /* CategoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD22551222E208C8006301CE /* CategoryType.swift */; };
+		FD3D7CB222E34BAE00CE5B10 /* OverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3D7CB122E34BAE00CE5B10 /* OverviewViewController.swift */; };
+		FD3D7CB422E34BB600CE5B10 /* Overview.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD3D7CB322E34BB600CE5B10 /* Overview.storyboard */; };
+		FD3D7CB622E34BF000CE5B10 /* OverviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3D7CB522E34BEF00CE5B10 /* OverviewViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +91,9 @@
 		FD22550C22E1EAFC006301CE /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		FD22550E22E1ED3D006301CE /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		FD22551222E208C8006301CE /* CategoryType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryType.swift; sourceTree = "<group>"; };
+		FD3D7CB122E34BAE00CE5B10 /* OverviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewController.swift; sourceTree = "<group>"; };
+		FD3D7CB322E34BB600CE5B10 /* Overview.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Overview.storyboard; sourceTree = "<group>"; };
+		FD3D7CB522E34BEF00CE5B10 /* OverviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OverviewViewModel.swift; path = /Users/aashish.tamsya/Desktop/NoExpense/NoExpense/Controllers/Overview/OverviewViewModel.swift; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				FD2254B622E0FCAC006301CE /* ViewController.swift */,
+				FD3D7CB022E34B9A00CE5B10 /* Overview */,
 				FD2254E722E196FE006301CE /* Transaction */,
 				FD2254E622E196D9006301CE /* EditExpense */,
 			);
@@ -264,6 +271,16 @@
 				FD22550C22E1EAFC006301CE /* Localizable.strings */,
 			);
 			path = Localization;
+			sourceTree = "<group>";
+		};
+		FD3D7CB022E34B9A00CE5B10 /* Overview */ = {
+			isa = PBXGroup;
+			children = (
+				FD3D7CB522E34BEF00CE5B10 /* OverviewViewModel.swift */,
+				FD3D7CB122E34BAE00CE5B10 /* OverviewViewController.swift */,
+				FD3D7CB322E34BB600CE5B10 /* Overview.storyboard */,
+			);
+			path = Overview;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -353,6 +370,7 @@
 			files = (
 				FD2254BF22E0FCAE006301CE /* LaunchScreen.storyboard in Resources */,
 				FD22550D22E1EAFC006301CE /* Localizable.strings in Resources */,
+				FD3D7CB422E34BB600CE5B10 /* Overview.storyboard in Resources */,
 				FD2254EB22E198E6006301CE /* EditExpense.storyboard in Resources */,
 				FD2254BC22E0FCAE006301CE /* Assets.xcassets in Resources */,
 				FD2254ED22E1990F006301CE /* Transactions.storyboard in Resources */,
@@ -457,6 +475,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD2254B722E0FCAC006301CE /* ViewController.swift in Sources */,
+				FD3D7CB622E34BF000CE5B10 /* OverviewViewModel.swift in Sources */,
+				FD3D7CB222E34BAE00CE5B10 /* OverviewViewController.swift in Sources */,
 				FD22550F22E1ED3D006301CE /* String+Extensions.swift in Sources */,
 				FD2254E222E18F97006301CE /* UINavigationController+Rx.swift in Sources */,
 				FD2254FF22E1B67C006301CE /* TransactionCell.swift in Sources */,

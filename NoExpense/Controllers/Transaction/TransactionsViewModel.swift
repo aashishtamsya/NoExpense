@@ -50,6 +50,19 @@ struct TransactionsViewModel {
     }
   }
   
+  func totalExpenseSelected() -> CocoaAction {
+    return CocoaAction { _ in
+      return self.transactionService
+        .transactions()
+        .flatMap { transactions -> Observable<Void> in
+        let overviewViewModel = OverviewViewModel(transactions: transactions, coordinator: self.sceneCoordinator)
+        return self.sceneCoordinator.transition(to: Scene.overview(overviewViewModel), type: .modal)
+          .asObservable()
+          .map { _ in }
+      }
+    }
+  }
+  
   var sectionItems: Observable<[TransactionSection]> {
     return self.transactionService.transactions()
       .map { results in

@@ -18,6 +18,7 @@ final class TransactionsViewController: ViewController, BindableType {
   @IBOutlet weak fileprivate var newTransactionButton: UIBarButtonItem!
   @IBOutlet weak fileprivate var totalExpenseLabel: UILabel!
   @IBOutlet weak fileprivate var thisMonthExpenseLabel: UILabel!
+  @IBOutlet weak fileprivate var totalExpenseButton: UIButton!
   
   var viewModel: TransactionsViewModel!
   var dataSource: RxTableViewSectionedAnimatedDataSource<TransactionSection>!
@@ -39,6 +40,8 @@ final class TransactionsViewController: ViewController, BindableType {
       .disposed(by: rx.disposeBag)
     
     newTransactionButton.rx.action = viewModel.onCreateTransaction()
+    
+    totalExpenseButton.rx.action = viewModel.totalExpenseSelected()
     
     tableView.rx.itemSelected
       .map { [unowned self] indexPath in

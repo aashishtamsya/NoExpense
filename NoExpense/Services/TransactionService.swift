@@ -12,18 +12,6 @@ import RxSwift
 import RxRealm
 
 struct TransactionService: TransactionServiceType {
-  init() {
-    do {
-      let realm = try Realm()
-      if realm.objects(TransactionItem.self).isEmpty {
-        [30, 250, 125, 90, 45].forEach {
-          self.create(amount: $0)
-        }
-      }
-    } catch _ {
-    }
-  }
-  
   @discardableResult
   func create(amount: Int) -> Observable<TransactionItem> {
     let result = withRealm("creating") { realm -> Observable<TransactionItem> in
@@ -89,7 +77,6 @@ struct TransactionService: TransactionServiceType {
       return Observable.collection(from: thisMonthTransactions).map { $0.sum(ofProperty: "amount") }
     }
     return result ?? .empty()
-
   }
   
   func totalExpenses() -> Observable<Int> {
@@ -114,6 +101,17 @@ struct TransactionService: TransactionServiceType {
           .map { $0.sum(ofProperty: "amount")}) { total, thisMonth in
             (total: total, thisMonth: thisMonth)
           }
+    }
+    return result ?? .empty()
+  }
+  
+  func transactionsThisMonth() -> Observable<Results<TransactionItem>> {
+    let result = withRealm("expense of this month") { realm -> Observable<Results<TransactionItem>> in
+      guard let startDate = Date().startOfCurrentMonth, let endDate = Date().endOfCurrentMonth else {
+        return .empty()
+      }
+      let thisMonthTransactions = realm.objects(TransactionItem.self).filter("(added >= %@) AND (added < %@)", startDate, endDate)
+      return Observable.collection(from: thisMonthTransactions)
     }
     return result ?? .empty()
   }

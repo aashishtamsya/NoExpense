@@ -63,7 +63,7 @@ private extension Date {
   ///
   /// - Parameter calendar: instance of calendar to retrieve the components of the time.
   /// - Returns: returns relative or colloquial time string
-  func getSinceTimeAgo(fromCalendar calendar: Calendar) -> String? { // swiftlint:disable:this cyclomatic_complexity function_body_length
+  func getSinceTimeAgo(fromCalendar calendar: Calendar) -> String? { // swiftlint:disable:this cyclomatic_complexity
     guard !isToday else {
       return "Today".localized
     }

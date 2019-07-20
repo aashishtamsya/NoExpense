@@ -21,7 +21,7 @@ enum CategoryType: String {
     get {
       switch self {
       case .other:
-        return #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
+        return #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
       case .travel:
         return #colorLiteral(red: 0.1184935048, green: 0.1185710803, blue: 0.1237265691, alpha: 1)
       case .family:
@@ -71,4 +71,13 @@ enum CategoryType: String {
   static let items: [CategoryType] = [.other, .travel, .family, .entertainment, .home, .food, .drink, .bills, .car, .utility, .shopping, .healthcare, .clothing, .vegetables, .accommodation, .transport, .hobbies, .education, .pets, .kids, .vacation, .gifts]
   
   static let stringValues: [String] = CategoryType.items.map { $0.rawValue.capitalized }
+  
+  static func category(at index: Int) -> CategoryType? {
+    guard index < items.count else { return nil }
+    return items[index]
+  }
+  
+  static func index(of category: CategoryType) -> Int {
+    return items.firstIndex(of: category) ?? 0
+  }
 }

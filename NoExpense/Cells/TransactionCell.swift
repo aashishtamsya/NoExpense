@@ -17,12 +17,20 @@ final class TransactionCell: UITableViewCell {
   
   private var disposeBag = DisposeBag()
   
+  override func awakeFromNib() {
+    super.awakeFromNib()
+    configureUI()
+  }
+  
   override func prepareForReuse() {
     disposeBag = DisposeBag()
     super.prepareForReuse()
+    configureUI()
   }
   
   func configure(with transaction: TransactionItem) {
+    categoryImageView.backgroundColor = transaction.categoryType.color
+
     transaction.rx.observe(Int.self, "amount")
       .map { "-\($0 ?? 0)"}
       .bind(to: amountLabel.rx.text)
@@ -40,5 +48,13 @@ final class TransactionCell: UITableViewCell {
       .map { CategoryType(rawValue: $0?.lowercased() ?? "")?.image }
       .bind(to: categoryImageView.rx.image)
       .disposed(by: disposeBag)
+  }
+}
+
+private extension TransactionCell {
+  func configureUI() {
+    categoryImageView.backgroundColor = nil
+    categoryImageView.roundCorners()
+    categoryImageView.tintColor = .white
   }
 }

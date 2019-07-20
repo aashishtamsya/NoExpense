@@ -29,12 +29,19 @@ final class TransactionsViewController: ViewController, BindableType {
   var viewModel: TransactionsViewModel!
   var dataSource: RxTableViewSectionedAnimatedDataSource<TransactionSection>!
   
+  var isTableViewEmpty: Bool {
+    get {
+      return tableView.visibleCells.isEmpty
+    }
+  }
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
     tableView.rowHeight = UITableView.automaticDimension
     tableView.estimatedRowHeight = 60
     tableView.register(UINib(nibName: "TransactionCell", bundle: nil), forCellReuseIdentifier: "TransactionCell")
+    emptyButton.roundCorners(withRadius: 8)
     
     configureDatasource()
     setEditing(true, animated: false)
@@ -45,9 +52,10 @@ final class TransactionsViewController: ViewController, BindableType {
     emptyButton.rx.action = viewModel.onCreateTransaction()
     totalExpenseButton.rx.action = viewModel.expense(of: .totalExpense)
     thisMonthExpenseButton.rx.action = viewModel.expense(of: .thisMonth)
-    
     bindTableView()
     bindExpensesUI()
+    expenseStackView.isHidden = isTableViewEmpty
+    emptyStackView.isHidden = !isTableViewEmpty
   }
   
   fileprivate func configureDatasource() {
@@ -119,6 +127,5 @@ final class TransactionsViewController: ViewController, BindableType {
       .map { !$0 }
       .bind(to: emptyStackView.rx.isHidden)
       .disposed(by: rx.disposeBag)
-    
   }
 }

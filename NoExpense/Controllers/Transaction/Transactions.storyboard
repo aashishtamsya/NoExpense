@@ -28,10 +28,10 @@
                                                 <rect key="frame" x="8" y="8" width="199" height="64"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uWa-jd-K8P">
-                                                        <rect key="frame" x="8" y="8" width="183" height="18.5"/>
+                                                        <rect key="frame" x="8" y="8" width="183" height="0.0"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="HEf-fi-dKL">
-                                                                <rect key="frame" x="39" y="1.5" width="105" height="16"/>
+                                                                <rect key="frame" x="39" y="-8" width="105" height="16"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="252" text="Total Expenses" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Djr-gT-69K">
                                                                         <rect key="frame" x="0.0" y="0.0" width="85" height="16"/>
@@ -54,8 +54,8 @@
                                                             <constraint firstItem="HEf-fi-dKL" firstAttribute="centerX" secondItem="uWa-jd-K8P" secondAttribute="centerX" id="8qi-pj-IUf"/>
                                                         </constraints>
                                                     </view>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="453" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c71-76-SNV">
-                                                        <rect key="frame" x="8" y="34.5" width="183" height="21.5"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c71-76-SNV">
+                                                        <rect key="frame" x="8" y="16" width="183" height="40"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                         <color key="textColor" red="0.8980392157" green="0.35196117669999999" blue="0.29251613570000001" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -147,13 +147,16 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YbS-DU-aRW">
-                                        <rect key="frame" x="132" y="168" width="110" height="40"/>
+                                        <rect key="frame" x="119.5" y="168" width="135" height="40"/>
+                                        <color key="backgroundColor" red="0.1137254902" green="0.61176470589999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="110" id="M7N-hg-MFd"/>
+                                            <constraint firstAttribute="width" constant="135" id="M7N-hg-MFd"/>
                                             <constraint firstAttribute="height" constant="40" id="VIR-q9-gHS"/>
                                         </constraints>
-                                        <state key="normal" title="Add Expense">
-                                            <color key="titleColor" red="0.89138208541830988" green="0.19245158450704225" blue="0.29251613570000001" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="ADD EXPENSE">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                     </button>
                                 </subviews>
@@ -211,6 +214,9 @@
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.1137254902" green="0.61176470589999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

@@ -99,7 +99,6 @@ private extension Date {
       }
     }
     if let interval = calendar.dateComponents([.hour], from: self, to: now).hour {
-      print(interval)
       if interval > 0 {
         return interval == 1 ? String(format: "AHourAgo".localized, interval) : String(format: "HoursAgo".localized, interval)
       } else if interval == 0 {

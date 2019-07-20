@@ -10,6 +10,7 @@ import RxSwift
 import RxCocoa
 import Action
 import RealmSwift
+import PieCharts
 
 struct OverviewViewModel {
   let transactionService: TransactionServiceType
@@ -35,6 +36,16 @@ struct OverviewViewModel {
     return self.transactionService.transactions()
       .map { results in
         return results.toArray()
+    }
+  }
+  
+  var slices: Observable<[PieSliceModel]> {
+    return self.transactionService.transactions()
+      .map { results in
+        let segments = results.toArray().reduce(into: [:]) { $0[$1.categoryType, default: 0] += $1.amount }
+        let slices: [PieSliceModel] = segments.reduce(into: []) { $0.append(PieSliceModel(value: Double($1.value), color: $1.key.color.withAlphaComponent(0.5), obj: $1.key))  }
+        return slices
+        
     }
   }
 }

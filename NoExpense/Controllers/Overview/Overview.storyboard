@@ -17,7 +17,31 @@
                     <view key="view" contentMode="scaleToFill" id="q0h-ui-liu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Oxm-zk-mug">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oZz-lt-IdL" customClass="PieChart" customModule="PieCharts">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="350"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="350" id="HYd-uS-YCf"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Yh-b6-Ou5">
+                                        <rect key="frame" x="0.0" y="350" width="414" height="424"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Oxm-zk-mug" firstAttribute="leading" secondItem="D31-C1-5J8" secondAttribute="leading" id="Nok-ee-Kuq"/>
+                            <constraint firstItem="Oxm-zk-mug" firstAttribute="top" secondItem="D31-C1-5J8" secondAttribute="top" id="XPn-J9-mo1"/>
+                            <constraint firstItem="D31-C1-5J8" firstAttribute="trailing" secondItem="Oxm-zk-mug" secondAttribute="trailing" id="Ye8-i4-MH7"/>
+                            <constraint firstItem="D31-C1-5J8" firstAttribute="bottom" secondItem="Oxm-zk-mug" secondAttribute="bottom" id="wiJ-WS-zm5"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="D31-C1-5J8"/>
                     </view>
                     <navigationItem key="navigationItem" title="Overview" id="I9H-FG-qg4">
@@ -27,6 +51,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="cancelBarButton" destination="8Ko-tr-F9m" id="eSC-Qi-vSL"/>
+                        <outlet property="pieChart" destination="oZz-lt-IdL" id="WWr-y9-qyg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pds-bt-bdF" userLabel="First Responder" sceneMemberID="firstResponder"/>

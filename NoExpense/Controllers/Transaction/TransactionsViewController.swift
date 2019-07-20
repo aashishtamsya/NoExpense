@@ -16,6 +16,8 @@ final class TransactionsViewController: ViewController, BindableType {
   
   @IBOutlet weak fileprivate var tableView: UITableView!
   @IBOutlet weak fileprivate var newTransactionButton: UIBarButtonItem!
+  @IBOutlet weak fileprivate var totalExpenseLabel: UILabel!
+  @IBOutlet weak fileprivate var thisMonthExpenseLabel: UILabel!
   
   var viewModel: TransactionsViewModel!
   var dataSource: RxTableViewSectionedAnimatedDataSource<TransactionSection>!
@@ -51,6 +53,12 @@ final class TransactionsViewController: ViewController, BindableType {
       }
       .subscribe(viewModel.deleteAction.inputs)
       .disposed(by: rx.disposeBag)
+    
+    viewModel.expenseStatistics.subscribe(onNext: { [weak self] stats in
+      self?.totalExpenseLabel.text = "-\(stats.total)"
+      self?.thisMonthExpenseLabel.text = "-\(stats.thisMonth)"
+    })
+    .disposed(by: rx.disposeBag)
   }
   
   fileprivate func configureDatasource() {

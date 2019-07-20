@@ -17,7 +17,6 @@ struct EditExpenseViewModel {
   let onCancel: CocoaAction?
   let disposeBag = DisposeBag()
   let categories = Observable.just(CategoryType.stringValues)
-  var selectedCategory = BehaviorRelay<String>(value: "")
   
   init(transaction: TransactionItem, coordinator: SceneCoordinatorType, updateAction: Action<UpdateInfo, Void>, cancelAction: CocoaAction? = nil) {
     self.transaction = transaction

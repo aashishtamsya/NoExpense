@@ -18,6 +18,8 @@ struct TransactionsViewModel {
   let sceneCoordinator: SceneCoordinatorType
   let transactionService: TransactionServiceType
   
+  lazy var expenseStatistics: Observable<ExpenseStatistics> = self.transactionService.expenseStatistics()
+  
   init(transactionService: TransactionServiceType, coordinator: SceneCoordinatorType) {
     self.transactionService = transactionService
     self.sceneCoordinator = coordinator
@@ -38,7 +40,7 @@ struct TransactionsViewModel {
   func onCreateTransaction() -> CocoaAction {
     return CocoaAction { _ in
       return self.transactionService
-        .create(amount: "")
+        .create(amount: 0)
         .flatMap({ transaction -> Observable<Void> in
           let editViewModel = EditExpenseViewModel(transaction: transaction, coordinator: self.sceneCoordinator, updateAction: self.onUpdate(transcation: transaction), cancelAction: self.onDelete(transaction: transaction))
           return self.sceneCoordinator.transition(to: Scene.editExpense(editViewModel), type: .modal)

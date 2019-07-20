@@ -27,9 +27,33 @@ extension Date {
     if let calendar = cachedCalendar {
       return checkForToday(fromCalendar: calendar)
     } else {
-      let calendar = Calendar(identifier: .gregorian)
+      let calendar = Calendar.current
       cachedCalendar = calendar
       return checkForToday(fromCalendar: calendar)
+    }
+  }
+  
+  var startOfCurrentMonth: Date? {
+    get {
+      if let calendar = cachedCalendar {
+        return startDateOfCurrentMonth(from: calendar)
+      } else {
+        let calendar = Calendar.current
+        cachedCalendar = calendar
+        return startDateOfCurrentMonth(from: calendar)
+      }
+    }
+  }
+  
+  var endOfCurrentMonth: Date? {
+    get {
+      if let calendar = cachedCalendar {
+        return endDateOfCurrentMonth(from: calendar)
+      } else {
+        let calendar = Calendar.current
+        cachedCalendar = calendar
+        return endDateOfCurrentMonth(from: calendar)
+      }
     }
   }
 }
@@ -100,5 +124,21 @@ private extension Date {
     let startOfDay = calendar.startOfDay(for: Date())
     let diff = calendar.dateComponents([.day], from: self, to: startOfDay).day ?? 0
     return diff < 0 ? false : (diff < 1)
+  }
+  
+  func startDateOfCurrentMonth(from calendar: Calendar) -> Date? {
+    let components = calendar.dateComponents([.year, .month], from: self)
+    let startOfMonth = calendar.date(from: components)
+    print(startOfMonth)
+    return startOfMonth
+  }
+  func endDateOfCurrentMonth(from calendar: Calendar) -> Date? {
+    guard let startOfMonth = startOfCurrentMonth else { return nil }
+    var components = calendar.dateComponents([.year, .month], from: self)
+    components.month = 1
+    components.day = -1
+    let endOfMonth = calendar.date(byAdding: components, to: startOfMonth)
+    print(endOfMonth)
+    return endOfMonth
   }
 }

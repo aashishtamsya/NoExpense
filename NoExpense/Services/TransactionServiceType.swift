@@ -16,9 +16,11 @@ enum TransactionServiceError: Error {
   case deletionFailed(TransactionItem)
 }
 
+typealias ExpenseStatistics = (total: Int, thisMonth: Int)
+
 protocol TransactionServiceType {
   @discardableResult
-  func create(amount: String) -> Observable<TransactionItem>
+  func create(amount: Int) -> Observable<TransactionItem>
   
   @discardableResult
   func delete(transaction: TransactionItem) -> Observable<Void>
@@ -27,4 +29,8 @@ protocol TransactionServiceType {
   func update(transcation: TransactionItem, updateInfo: UpdateInfo) -> Observable<TransactionItem>
   
   func transactions() -> Observable<Results<TransactionItem>>
+  
+  func expensesThisMonth() -> Observable<Int>
+  func totalExpenses() -> Observable<Int>
+  func expenseStatistics() -> Observable<ExpenseStatistics>
 }

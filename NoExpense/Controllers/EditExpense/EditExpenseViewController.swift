@@ -26,7 +26,7 @@ final class EditExpenseViewController: ViewController, BindableType {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    configureDateField()
+    configureUI()
   }
   
   func bindViewModel() {
@@ -47,8 +47,6 @@ final class EditExpenseViewController: ViewController, BindableType {
         return "\(item)"
       }
       .disposed(by: rx.disposeBag)
-    
-    categoryField.inputView = categoryPicker
     
     categoryPicker.rx.modelSelected(String.self)
       .map { $0.first ?? "" }
@@ -77,10 +75,11 @@ final class EditExpenseViewController: ViewController, BindableType {
 }
 // MARK: - Private Methods
 private extension EditExpenseViewController {
-  func configureDateField() {
+  func configureUI() {
     datePicker.datePickerMode = .date
     datePicker.maximumDate = Date().addingTimeInterval(31556926)
     datePicker.minimumDate = Date().addingTimeInterval(-31556926)
     dateField.inputView = datePicker
+    categoryField.inputView = categoryPicker
   }
 }

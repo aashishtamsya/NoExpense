@@ -129,7 +129,6 @@ private extension Date {
   func startDateOfCurrentMonth(from calendar: Calendar) -> Date? {
     let components = calendar.dateComponents([.year, .month], from: self)
     let startOfMonth = calendar.date(from: components)
-    print(startOfMonth)
     return startOfMonth
   }
   func endDateOfCurrentMonth(from calendar: Calendar) -> Date? {
@@ -138,7 +137,6 @@ private extension Date {
     components.month = 1
     components.day = -1
     let endOfMonth = calendar.date(byAdding: components, to: startOfMonth)
-    print(endOfMonth)
     return endOfMonth
   }
 }

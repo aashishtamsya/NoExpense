@@ -30,6 +30,7 @@ class SceneCoordinator: SceneCoordinatorType {
   func transition(to scene: Scene, type: SceneTransitionType) -> Completable {
     let subject = PublishSubject<Void>()
     let viewController = scene.viewController()
+    print((viewController as? UINavigationController)?.viewControllers ?? "Empty VCs")
     switch type {
     case .root:
       currentViewController = SceneCoordinator.actualViewController(for: viewController)

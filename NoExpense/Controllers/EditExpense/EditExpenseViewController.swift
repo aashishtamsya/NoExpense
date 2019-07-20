@@ -30,7 +30,7 @@ final class EditExpenseViewController: ViewController, BindableType {
   }
   
   func bindViewModel() {
-    amountField.text = viewModel.transaction.amountString
+    amountField.text = viewModel.transaction.amount == 0 ? "" : viewModel.transaction.amountString
     categoryField.text = viewModel.transaction.category
     noteField.text = viewModel.transaction.note
     dateField.text = viewModel.transaction.added.friendlyDateString
@@ -58,6 +58,11 @@ final class EditExpenseViewController: ViewController, BindableType {
     let updateInfo = Observable.combineLatest(amountField.rx.text, categoryField.rx.text, noteField.rx.text, datePicker.rx.date) { (amount, category, note, date) -> UpdateInfo in
       return UpdateInfo(amount: amount ?? "0", category: category, note: note, added: date)
     }
+    
+    amountField.rx.text.orEmpty
+      .map { (Int($0) ?? 0) != 0 }
+      .bind(to: doneBarButton.rx.isEnabled)
+      .disposed(by: rx.disposeBag)
     
     doneBarButton.rx.tap
       .withLatestFrom(updateInfo)

@@ -16,11 +16,7 @@ struct TransactionService: TransactionServiceType {
     do {
       let realm = try Realm()
       if realm.objects(TransactionItem.self).isEmpty {
-        ["34",
-         "250",
-         "123",
-         "98",
-         "46"].forEach {
+        [30, 250, 125, 90, 45].forEach {
           self.create(amount: $0)
         }
       }
@@ -29,7 +25,7 @@ struct TransactionService: TransactionServiceType {
   }
   
   @discardableResult
-  func create(amount: String) -> Observable<TransactionItem> {
+  func create(amount: Int) -> Observable<TransactionItem> {
     let result = withRealm("creating") { realm -> Observable<TransactionItem> in
       let transcation = TransactionItem()
       transcation.amount = amount
@@ -57,7 +53,9 @@ struct TransactionService: TransactionServiceType {
   func update(transcation: TransactionItem, updateInfo: UpdateInfo) -> Observable<TransactionItem> {
     let result = withRealm("updating") { realm -> Observable<TransactionItem> in
       try realm.write {
-        transcation.amount = updateInfo.amount
+        if let amount = Int(updateInfo.amount) {
+          transcation.amount = amount
+        }
         if let note = updateInfo.note {
           transcation.note = note
         }
@@ -78,6 +76,44 @@ struct TransactionService: TransactionServiceType {
       let realm = try Realm()
       let transactions = realm.objects(TransactionItem.self).sorted(byKeyPath: "added", ascending: false)    
       return Observable.collection(from: transactions)
+    }
+    return result ?? .empty()
+  }
+  
+  func expensesThisMonth() -> Observable<Int> {
+    let result = withRealm("expense of this month") { realm -> Observable<Int> in
+      guard let startDate = Date().startOfCurrentMonth, let endDate = Date().endOfCurrentMonth else {
+        return .empty()
+      }
+      let thisMonthTransactions = realm.objects(TransactionItem.self).filter("(added >= %@) AND (added < %@)", startDate, endDate)
+      return Observable.collection(from: thisMonthTransactions).map { $0.sum(ofProperty: "amount") }
+    }
+    return result ?? .empty()
+
+  }
+  
+  func totalExpenses() -> Observable<Int> {
+    let result = withRealm("total expense") { realm -> Observable<Int> in
+      let transactions = realm.objects(TransactionItem.self)
+      return Observable.collection(from: transactions).map { $0.sum(ofProperty: "amount") }
+    }
+    return result ?? .empty()
+  }
+  
+  func expenseStatistics() -> Observable<ExpenseStatistics> {
+    let result = withRealm("expense statistics") { realm -> Observable<ExpenseStatistics> in
+      guard let startDate = Date().startOfCurrentMonth, let endDate = Date().endOfCurrentMonth else {
+        return .empty()
+      }
+      let transactions = realm.objects(TransactionItem.self)
+      let thisMonthTransactions = realm.objects(TransactionItem.self).filter("(added >= %@) AND (added < %@)", startDate, endDate)
+      return .combineLatest(
+        Observable.collection(from: transactions)
+          .map { $0.sum(ofProperty: "amount") },
+        Observable.collection(from: thisMonthTransactions)
+          .map { $0.sum(ofProperty: "amount")}) { total, thisMonth in
+            (total: total, thisMonth: thisMonth)
+          }
     }
     return result ?? .empty()
   }

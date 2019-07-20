@@ -153,8 +153,8 @@
 		FD2254B322E0FCAC006301CE /* NoExpense */ = {
 			isa = PBXGroup;
 			children = (
-				FD22550B22E1EADB006301CE /* Localization */,
 				FD2254B422E0FCAC006301CE /* AppDelegate.swift */,
+				FD22550B22E1EADB006301CE /* Localization */,
 				FD2254E322E190F5006301CE /* Controllers */,
 				FD2254E022E18F7D006301CE /* Extensions */,
 				FD2254F322E19B47006301CE /* Model */,

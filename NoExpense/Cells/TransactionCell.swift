@@ -23,7 +23,8 @@ final class TransactionCell: UITableViewCell {
   }
   
   func configure(with transaction: TransactionItem) {
-    transaction.rx.observe(String.self, "amount")
+    transaction.rx.observe(Int.self, "amount")
+      .map { "-\($0 ?? 0)"}
       .bind(to: amountLabel.rx.text)
       .disposed(by: disposeBag)
     

@@ -15,7 +15,11 @@ class TransactionItem: Object {
   @objc dynamic var category = "Other"
   @objc dynamic var added = Date()
   @objc dynamic var note = ""
-  @objc dynamic var amount = ""
+  @objc dynamic var amount = 0
+  
+  var amountString: String {
+    get { return "\(amount)" }
+  }
   
   override class func primaryKey() -> String? {
     return "uid"

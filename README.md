@@ -26,7 +26,7 @@ iOS application which only tracks your expenses.
  - [Create Transactions](#create-transactions)
  - [View Transactions](#view-transactions)
  - [Add Image to Transactions](#add-image-to-transactions)
- - [Delete Transactions](#delete -transactions)
+ - [Delete Transactions](#delete-transactions)
  - [Overview](#overview)
  - [Future Transaction](#future-transaction)
  - [EmptyState](#emptystate)

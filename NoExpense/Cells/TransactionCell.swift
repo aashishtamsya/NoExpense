@@ -32,7 +32,7 @@ final class TransactionCell: UITableViewCell {
     categoryImageView.backgroundColor = transaction.categoryType.color
 
     transaction.rx.observe(Int.self, "amount")
-      .map { "-\($0 ?? 0)"}
+      .map { ($0 ?? 0).expenseString }
       .bind(to: amountLabel.rx.text)
       .disposed(by: disposeBag)
     

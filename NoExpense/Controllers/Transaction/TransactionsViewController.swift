@@ -94,7 +94,7 @@ final class TransactionsViewController: ViewController, BindableType {
       .share()
     
     totalExpenseShared
-      .map { "-\($0)" }
+      .map { $0.expenseString }
       .bind(to: totalExpenseLabel.rx.text)
       .disposed(by: rx.disposeBag)
     
@@ -108,7 +108,7 @@ final class TransactionsViewController: ViewController, BindableType {
       .share()
     
     thisMonthExpenseShared
-      .map { "-\($0)" }
+      .map { $0.expenseString }
       .bind(to: thisMonthExpenseLabel.rx.text)
       .disposed(by: rx.disposeBag)
     

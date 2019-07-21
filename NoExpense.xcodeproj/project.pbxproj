@@ -42,6 +42,7 @@
 		FD3D7CB622E34BF000CE5B10 /* OverviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3D7CB522E34BEF00CE5B10 /* OverviewViewModel.swift */; };
 		FD3D7CB822E39AD600CE5B10 /* OverviewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3D7CB722E39AD600CE5B10 /* OverviewType.swift */; };
 		FD3D7CBA22E3A0E800CE5B10 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3D7CB922E3A0E800CE5B10 /* UIView+Extensions.swift */; };
+		FD3D7CBC22E3E3E800CE5B10 /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3D7CBB22E3E3E800CE5B10 /* Int+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +99,7 @@
 		FD3D7CB522E34BEF00CE5B10 /* OverviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OverviewViewModel.swift; path = /Users/aashish.tamsya/Desktop/NoExpense/NoExpense/Controllers/Overview/OverviewViewModel.swift; sourceTree = "<absolute>"; };
 		FD3D7CB722E39AD600CE5B10 /* OverviewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewType.swift; sourceTree = "<group>"; };
 		FD3D7CB922E3A0E800CE5B10 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		FD3D7CBB22E3E3E800CE5B10 /* Int+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +207,7 @@
 				FD2254E122E18F97006301CE /* UINavigationController+Rx.swift */,
 				FD22550922E1EAB3006301CE /* Date+Extensions.swift */,
 				FD22550E22E1ED3D006301CE /* String+Extensions.swift */,
+				FD3D7CBB22E3E3E800CE5B10 /* Int+Extensions.swift */,
 				FD3D7CB922E3A0E800CE5B10 /* UIView+Extensions.swift */,
 			);
 			path = Extensions;
@@ -485,6 +488,7 @@
 				FD3D7CBA22E3A0E800CE5B10 /* UIView+Extensions.swift in Sources */,
 				FD3D7CB222E34BAE00CE5B10 /* OverviewViewController.swift in Sources */,
 				FD22550F22E1ED3D006301CE /* String+Extensions.swift in Sources */,
+				FD3D7CBC22E3E3E800CE5B10 /* Int+Extensions.swift in Sources */,
 				FD2254E222E18F97006301CE /* UINavigationController+Rx.swift in Sources */,
 				FD2254FF22E1B67C006301CE /* TransactionCell.swift in Sources */,
 				FD3D7CB822E39AD600CE5B10 /* OverviewType.swift in Sources */,

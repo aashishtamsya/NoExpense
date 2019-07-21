@@ -21,7 +21,7 @@ final class OverviewViewController: ViewController, BindableType {
     totalExpenseChart.layers = viewModel.pieChartLayers
     
     viewModel.expenses
-      .map { "-\($0)" }
+      .map { $0.expenseString }
       .bind(to: totalExpenseLabel.rx.text)
       .disposed(by: rx.disposeBag)
     

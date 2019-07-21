@@ -28,6 +28,9 @@ protocol TransactionServiceType {
   @discardableResult
   func update(transcation: TransactionItem, updateInfo: UpdateInfo) -> Observable<TransactionItem>
   
+  @discardableResult
+  func update(transcation: TransactionItem, imagePath: String) -> Observable<TransactionItem>
+  
   func transactions() -> Observable<Results<TransactionItem>>
   
   func transactionsThisMonth() -> Observable<Results<TransactionItem>>

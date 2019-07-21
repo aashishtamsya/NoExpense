@@ -11,6 +11,7 @@ def shared_pods
   pod 'RealmSwift', '~> 3.17.1'
   pod 'RxRealm', '~> 1.0.0'
   pod 'PieCharts', '~> 0.0.7'
+  pod 'RxGesture', '~> 3.0.0'
 end
 
 target 'NoExpense' do

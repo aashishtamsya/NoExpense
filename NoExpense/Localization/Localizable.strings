@@ -35,3 +35,7 @@
 "HoursBefore"   = "in %d hours";
 "AMinuteBefore" = "in %d minute";
 "MinutesBefore" = "in %d minutes";
+
+"Cancel" = "Cancel";
+"TakeAPhoto" = "Take a photo";
+"ChooseFromGallery" = "Choose from gallery";

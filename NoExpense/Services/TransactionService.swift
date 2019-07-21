@@ -59,6 +59,16 @@ struct TransactionService: TransactionServiceType {
     return result ?? .error(TransactionServiceError.updateFailed(transcation))
   }
   
+  func update(transcation: TransactionItem, imagePath: String) -> Observable<TransactionItem> {
+    let result = withRealm("updating imagepath") { realm -> Observable<TransactionItem> in
+      try realm.write {
+        transcation.imagePath = imagePath
+      }
+      return .just(transcation)
+    }
+    return result ?? .error(TransactionServiceError.updateFailed(transcation))
+  }
+  
   func transactions() -> Observable<Results<TransactionItem>> {
     let result = withRealm("getting transcations") { realm -> Observable<Results<TransactionItem>> in
       let realm = try Realm()

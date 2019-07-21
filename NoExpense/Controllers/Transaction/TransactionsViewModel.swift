@@ -42,7 +42,7 @@ struct TransactionsViewModel {
       return self.transactionService
         .create(amount: 0)
         .flatMap({ transaction -> Observable<Void> in
-          let editViewModel = EditExpenseViewModel(transaction: transaction, coordinator: self.sceneCoordinator, updateAction: self.onUpdate(transcation: transaction), cancelAction: self.onDelete(transaction: transaction))
+          let editViewModel = EditExpenseViewModel(transaction: transaction, service: self.transactionService, coordinator: self.sceneCoordinator, updateAction: self.onUpdate(transcation: transaction), cancelAction: self.onDelete(transaction: transaction))
           return self.sceneCoordinator.transition(to: .editExpense(editViewModel), type: .modal)
             .asObservable()
             .map { _ in }
@@ -77,7 +77,7 @@ struct TransactionsViewModel {
   
   lazy var editAction: Action<TransactionItem, Swift.Never> = { this in
     return Action { transaction in
-      let editViewModel = EditExpenseViewModel(transaction: transaction, coordinator: this.sceneCoordinator, updateAction: this.onUpdate(transcation: transaction))
+      let editViewModel = EditExpenseViewModel(transaction: transaction, service: this.transactionService, coordinator: this.sceneCoordinator, updateAction: this.onUpdate(transcation: transaction))
       return this.sceneCoordinator
         .transition(to: Scene.editExpense(editViewModel), type: .modal)
         .asObservable()

@@ -11,15 +11,28 @@ import RxSwift
 import Action
 import RxCocoa
 
-struct EditExpenseViewModel {
+class EditExpenseViewModel {
   let transaction: TransactionItem
   let onUpdate: Action<UpdateInfo, Void>!
   let onCancel: CocoaAction?
   let disposeBag = DisposeBag()
   let categories = Observable.just(CategoryType.stringValues)
   
-  init(transaction: TransactionItem, coordinator: SceneCoordinatorType, updateAction: Action<UpdateInfo, Void>, cancelAction: CocoaAction? = nil) {
+  let transactionService: TransactionServiceType
+  var selectedImage = BehaviorRelay<UIImage?>(value: nil)
+  let imagePathSubject = PublishSubject<String>()
+
+  var hasImage: Observable<Bool> {
+    return Observable.combineLatest(imagePathSubject.asObservable(), selectedImage.asObservable()) { $0.isEmpty && $1 == nil }
+  }
+  
+  typealias Inputs = (Signal<Void>)
+  typealias UploadImageWireframe  = (UploadImageServiceType)
+  
+  init(transaction: TransactionItem, service transactionService: TransactionServiceType, coordinator: SceneCoordinatorType, updateAction: Action<UpdateInfo, Void>, cancelAction: CocoaAction? = nil) {
     self.transaction = transaction
+    self.transactionService = transactionService
+    
     onUpdate = updateAction
     
     onUpdate.executionObservables
@@ -37,5 +50,37 @@ struct EditExpenseViewModel {
         .asObservable()
         .map { _ in }
     }
+  }
+  
+  func set(inputs: Inputs, remove: Inputs, wireframe: UploadImageWireframe) {
+    selectedImage = wireframe.selectedImage
+    
+    selectedImage.subscribe(onNext: { [weak self] image in
+      if let path = image?.save(), let transaction = self?.transaction {
+        self?.transactionService.update(transcation: transaction, imagePath: path)
+      }
+    })
+      .disposed(by: disposeBag)
+    
+    inputs.emit(onNext: { _ in
+      var actions = [ActionSheetItem<UIImagePickerController.SourceType>]()
+      if UIImagePickerController.isSourceTypeAvailable(.camera) {
+        actions.insert(ActionSheetItem<UIImagePickerController.SourceType>(title: "TakeAPhoto".localized, selectType: .camera, style: .default), at: 0)
+      }
+      if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+        actions.insert(ActionSheetItem<UIImagePickerController.SourceType>(title: "ChooseFromGallery".localized, selectType: .photoLibrary, style: .default), at: 0)
+      }
+      wireframe.showActionSheet(title: "", message: "", actions: actions)
+    })
+      .disposed(by: disposeBag)
+    
+    remove.emit(onNext: { [weak self] _ in
+      if let transaction = self?.transaction {
+        self?.transactionService.update(transcation: transaction, imagePath: "")
+        self?.imagePathSubject.onNext("")
+        self?.selectedImage.accept(nil)
+      }
+    })
+      .disposed(by: disposeBag)
   }
 }

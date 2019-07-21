@@ -19,7 +19,6 @@
 		FD2254DB22E108E4006301CE /* SceneCoordinatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2254DA22E108E4006301CE /* SceneCoordinatorType.swift */; };
 		FD2254DD22E10BE1006301CE /* Scene+ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2254DC22E10BE0006301CE /* Scene+ViewController.swift */; };
 		FD2254DF22E10C8C006301CE /* SceneTransitionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2254DE22E10C8C006301CE /* SceneTransitionType.swift */; };
-		FD2254E222E18F97006301CE /* UINavigationController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2254E122E18F97006301CE /* UINavigationController+Rx.swift */; };
 		FD2254E522E1911A006301CE /* EditExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2254E422E1911A006301CE /* EditExpenseViewController.swift */; };
 		FD2254E922E197FA006301CE /* TransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2254E822E197FA006301CE /* TransactionsViewController.swift */; };
 		FD2254EB22E198E6006301CE /* EditExpense.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD2254EA22E198E6006301CE /* EditExpense.storyboard */; };
@@ -43,6 +42,13 @@
 		FD3D7CBA22E3A0E800CE5B10 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3D7CB922E3A0E800CE5B10 /* UIView+Extensions.swift */; };
 		FD3D7CBC22E3E3E800CE5B10 /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3D7CBB22E3E3E800CE5B10 /* Int+Extensions.swift */; };
 		FD3D7CBE22E3E71700CE5B10 /* OverviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3D7CBD22E3E71700CE5B10 /* OverviewViewModel.swift */; };
+		FD3D7CC222E3EBBA00CE5B10 /* RxImagePickerDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3D7CC122E3EBBA00CE5B10 /* RxImagePickerDelegateProxy.swift */; };
+		FD3D7CC522E3EC3900CE5B10 /* UIImagePickerController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3D7CC422E3EC3900CE5B10 /* UIImagePickerController+Rx.swift */; };
+		FD3D7CC722E3EC6100CE5B10 /* UIImagePickerController+RxCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3D7CC622E3EC6100CE5B10 /* UIImagePickerController+RxCreate.swift */; };
+		FD3D7CC922E3ECD400CE5B10 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3D7CC822E3ECD400CE5B10 /* UIViewController+Extensions.swift */; };
+		FD3D7CCB22E3ED1000CE5B10 /* UIAlertController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3D7CCA22E3ED1000CE5B10 /* UIAlertController+Extensions.swift */; };
+		FD3D7CCD22E3ED6B00CE5B10 /* UploadImageServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3D7CCC22E3ED6B00CE5B10 /* UploadImageServiceType.swift */; };
+		FD3D7CCF22E3ED7E00CE5B10 /* UploadImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3D7CCE22E3ED7E00CE5B10 /* UploadImageService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,7 +82,6 @@
 		FD2254DA22E108E4006301CE /* SceneCoordinatorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneCoordinatorType.swift; sourceTree = "<group>"; };
 		FD2254DC22E10BE0006301CE /* Scene+ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Scene+ViewController.swift"; sourceTree = "<group>"; };
 		FD2254DE22E10C8C006301CE /* SceneTransitionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneTransitionType.swift; sourceTree = "<group>"; };
-		FD2254E122E18F97006301CE /* UINavigationController+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Rx.swift"; sourceTree = "<group>"; };
 		FD2254E422E1911A006301CE /* EditExpenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditExpenseViewController.swift; sourceTree = "<group>"; };
 		FD2254E822E197FA006301CE /* TransactionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewController.swift; sourceTree = "<group>"; };
 		FD2254EA22E198E6006301CE /* EditExpense.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditExpense.storyboard; sourceTree = "<group>"; };
@@ -100,6 +105,13 @@
 		FD3D7CB922E3A0E800CE5B10 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		FD3D7CBB22E3E3E800CE5B10 /* Int+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extensions.swift"; sourceTree = "<group>"; };
 		FD3D7CBD22E3E71700CE5B10 /* OverviewViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverviewViewModel.swift; sourceTree = "<group>"; };
+		FD3D7CC122E3EBBA00CE5B10 /* RxImagePickerDelegateProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxImagePickerDelegateProxy.swift; sourceTree = "<group>"; };
+		FD3D7CC422E3EC3900CE5B10 /* UIImagePickerController+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImagePickerController+Rx.swift"; sourceTree = "<group>"; };
+		FD3D7CC622E3EC6100CE5B10 /* UIImagePickerController+RxCreate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImagePickerController+RxCreate.swift"; sourceTree = "<group>"; };
+		FD3D7CC822E3ECD400CE5B10 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		FD3D7CCA22E3ED1000CE5B10 /* UIAlertController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extensions.swift"; sourceTree = "<group>"; };
+		FD3D7CCC22E3ED6B00CE5B10 /* UploadImageServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImageServiceType.swift; sourceTree = "<group>"; };
+		FD3D7CCE22E3ED7E00CE5B10 /* UploadImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImageService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,11 +216,13 @@
 		FD2254E022E18F7D006301CE /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				FD2254E122E18F97006301CE /* UINavigationController+Rx.swift */,
+				FD3D7CC322E3EC2E00CE5B10 /* UIImagePicker+Rx */,
 				FD22550922E1EAB3006301CE /* Date+Extensions.swift */,
 				FD22550E22E1ED3D006301CE /* String+Extensions.swift */,
 				FD3D7CBB22E3E3E800CE5B10 /* Int+Extensions.swift */,
 				FD3D7CB922E3A0E800CE5B10 /* UIView+Extensions.swift */,
+				FD3D7CC822E3ECD400CE5B10 /* UIViewController+Extensions.swift */,
+				FD3D7CCA22E3ED1000CE5B10 /* UIAlertController+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -249,6 +263,8 @@
 			children = (
 				FD2254F122E19B29006301CE /* TransactionServiceType.swift */,
 				FD2254FA22E1A553006301CE /* TransactionService.swift */,
+				FD3D7CCC22E3ED6B00CE5B10 /* UploadImageServiceType.swift */,
+				FD3D7CCE22E3ED7E00CE5B10 /* UploadImageService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -290,6 +306,16 @@
 				FD3D7CB322E34BB600CE5B10 /* Overview.storyboard */,
 			);
 			path = Overview;
+			sourceTree = "<group>";
+		};
+		FD3D7CC322E3EC2E00CE5B10 /* UIImagePicker+Rx */ = {
+			isa = PBXGroup;
+			children = (
+				FD3D7CC122E3EBBA00CE5B10 /* RxImagePickerDelegateProxy.swift */,
+				FD3D7CC422E3EC3900CE5B10 /* UIImagePickerController+Rx.swift */,
+				FD3D7CC622E3EC6100CE5B10 /* UIImagePickerController+RxCreate.swift */,
+			);
+			path = "UIImagePicker+Rx";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -483,12 +509,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD3D7CC222E3EBBA00CE5B10 /* RxImagePickerDelegateProxy.swift in Sources */,
 				FD2254B722E0FCAC006301CE /* ViewController.swift in Sources */,
+				FD3D7CC522E3EC3900CE5B10 /* UIImagePickerController+Rx.swift in Sources */,
 				FD3D7CBA22E3A0E800CE5B10 /* UIView+Extensions.swift in Sources */,
+				FD3D7CC722E3EC6100CE5B10 /* UIImagePickerController+RxCreate.swift in Sources */,
+				FD3D7CCF22E3ED7E00CE5B10 /* UploadImageService.swift in Sources */,
 				FD3D7CB222E34BAE00CE5B10 /* OverviewViewController.swift in Sources */,
 				FD22550F22E1ED3D006301CE /* String+Extensions.swift in Sources */,
 				FD3D7CBC22E3E3E800CE5B10 /* Int+Extensions.swift in Sources */,
-				FD2254E222E18F97006301CE /* UINavigationController+Rx.swift in Sources */,
 				FD2254FF22E1B67C006301CE /* TransactionCell.swift in Sources */,
 				FD3D7CB822E39AD600CE5B10 /* OverviewType.swift in Sources */,
 				FD2254E522E1911A006301CE /* EditExpenseViewController.swift in Sources */,
@@ -502,11 +531,14 @@
 				FD2254F222E19B29006301CE /* TransactionServiceType.swift in Sources */,
 				FD2254FB22E1A553006301CE /* TransactionService.swift in Sources */,
 				FD22550A22E1EAB3006301CE /* Date+Extensions.swift in Sources */,
+				FD3D7CC922E3ECD400CE5B10 /* UIViewController+Extensions.swift in Sources */,
 				FD22550422E1DEAF006301CE /* UpdateInfo.swift in Sources */,
 				FD2254F922E1A0C4006301CE /* EditExpenseViewModel.swift in Sources */,
 				FD2254F722E1A02E006301CE /* BindableType.swift in Sources */,
+				FD3D7CCD22E3ED6B00CE5B10 /* UploadImageServiceType.swift in Sources */,
 				FD2254D722E1089A006301CE /* Scene.swift in Sources */,
 				FD2254EF22E19AB5006301CE /* TransactionsViewModel.swift in Sources */,
+				FD3D7CCB22E3ED1000CE5B10 /* UIAlertController+Extensions.swift in Sources */,
 				FD2254D922E108CF006301CE /* SceneCoordinator.swift in Sources */,
 				FD22551322E208C8006301CE /* CategoryType.swift in Sources */,
 			);

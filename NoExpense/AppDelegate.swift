@@ -13,6 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   var window: UIWindow?
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    RxImagePickerDelegateProxy.register { RxImagePickerDelegateProxy(imagePicker: $0) }
     let service = TransactionService()
     let sceneCoordinator = SceneCoordinator(window: window!)
     let transactionsViewModel = TransactionsViewModel(transactionService: service, coordinator: sceneCoordinator)

@@ -12,15 +12,17 @@ import RxCocoa
 import Action
 import NSObject_Rx
 import RxDataSources
+import RxGesture
 
 final class EditExpenseViewController: ViewController, BindableType {
+  @IBOutlet weak fileprivate var addImage: UIButton!
+  @IBOutlet weak fileprivate var addImageView: UIImageView!
   @IBOutlet weak fileprivate var categoryImageView: UIImageView!
   @IBOutlet weak fileprivate var cancelBarButton: UIBarButtonItem!
   @IBOutlet weak fileprivate var doneBarButton: UIBarButtonItem!
   @IBOutlet weak fileprivate var amountField: UITextField!
   @IBOutlet weak fileprivate var categoryField: UITextField!
-  @IBOutlet weak fileprivate var noteTextView: UITextView!
-  //  @IBOutlet weak fileprivate var noteField: UITextField!
+  @IBOutlet weak fileprivate var noteField: UITextField!
   @IBOutlet weak fileprivate var dateField: UITextField!
   @IBOutlet weak fileprivate var amountView: UIView!
   
@@ -37,13 +39,15 @@ final class EditExpenseViewController: ViewController, BindableType {
   func bindViewModel() {
     amountField.text = viewModel.transaction.amount == 0 ? "" : viewModel.transaction.amountString
     categoryField.text = viewModel.transaction.category
-    noteTextView.text = viewModel.transaction.note
+    noteField.text = viewModel.transaction.note
     dateField.text = viewModel.transaction.added.friendlyDateString
     datePicker.date = viewModel.transaction.added
     amountView.backgroundColor = viewModel.transaction.categoryType.color
     categoryImageView.image = viewModel.transaction.categoryType.image
     
     cancelBarButton.rx.action = viewModel.onCancel
+    
+    bindGestures()
 
     categoryPicker.rx.itemSelected
       .subscribe(onNext: { [weak self] item in
@@ -62,7 +66,7 @@ final class EditExpenseViewController: ViewController, BindableType {
       .bind(to: categoryPicker.rx.items(adapter: categoryPickerAdaptor))
       .disposed(by: rx.disposeBag)
     
-    let updateInfo = Observable.combineLatest(amountField.rx.text.orEmpty.asObservable(), categoryField.rx.text.orEmpty.asObservable(), noteTextView.rx.text.orEmpty.asObservable(), datePicker.rx.date.asObservable()) { (amount, category, note, date) -> UpdateInfo in
+    let updateInfo = Observable.combineLatest(amountField.rx.text.orEmpty.asObservable(), categoryField.rx.text.orEmpty.asObservable(), noteField.rx.text.orEmpty.asObservable(), datePicker.rx.date.asObservable()) { (amount, category, note, date) -> UpdateInfo in
       return UpdateInfo(amount: amount, category: category, note: note, added: date)
     }
     
@@ -76,6 +80,12 @@ final class EditExpenseViewController: ViewController, BindableType {
       .disposed(by: rx.disposeBag)
     
     categoryPicker.selectRow(CategoryType.index(of: viewModel.transaction.categoryType), inComponent: 0, animated: true)
+    
+    viewModel.set(inputs: addImage.rx.tap.asSignal(), wireframe: UploadImageService(view: self))
+    
+    viewModel.selectedImage
+    .asObservable().bind(to: addImageView.rx.image)
+    .disposed(by: rx.disposeBag)
   }
   
   override func viewDidAppear(_ animated: Bool) {
@@ -102,5 +112,22 @@ private extension EditExpenseViewController {
     })
     
     categoryField.inputView = categoryPicker
+  }
+  
+  func bindGestures() {
+    // gesture to dismiss keyboard
+    view.rx.tapGesture()
+      .when(.recognized)
+      .subscribe(onNext: { [weak self] _ in
+        self?.view.endEditing(true)
+      })
+      .disposed(by: rx.disposeBag)
+    
+    view.rx.swipeGesture([.down, .left, .right, .up])
+      .when(.recognized)
+      .subscribe(onNext: { [weak self] _ in
+        self?.view.endEditing(true)
+      })
+      .disposed(by: rx.disposeBag)
   }
 }

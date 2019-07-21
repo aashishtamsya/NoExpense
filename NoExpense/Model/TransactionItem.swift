@@ -21,6 +21,7 @@ class TransactionItem: Object {
   @objc dynamic var added = Date()
   @objc dynamic var note = ""
   @objc dynamic var amount = 0
+  @objc dynamic var imagePath = ""
   
   var amountString: String {
     get { return "\(amount)" }

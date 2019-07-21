@@ -13,6 +13,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   var window: UIWindow?
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    realmMigration()
+    debugLog("🔥", NSHomeDirectory().appending("/Documents/"))
     RxImagePickerDelegateProxy.register { RxImagePickerDelegateProxy(imagePicker: $0) }
     let service = TransactionService()
     let sceneCoordinator = SceneCoordinator(window: window!)

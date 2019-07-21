@@ -49,6 +49,9 @@
 		FD3D7CCB22E3ED1000CE5B10 /* UIAlertController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3D7CCA22E3ED1000CE5B10 /* UIAlertController+Extensions.swift */; };
 		FD3D7CCD22E3ED6B00CE5B10 /* UploadImageServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3D7CCC22E3ED6B00CE5B10 /* UploadImageServiceType.swift */; };
 		FD3D7CCF22E3ED7E00CE5B10 /* UploadImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3D7CCE22E3ED7E00CE5B10 /* UploadImageService.swift */; };
+		FD3D7CD722E4678800CE5B10 /* Realm+Migration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3D7CD622E4678800CE5B10 /* Realm+Migration.swift */; };
+		FD3D7CDB22E47A2E00CE5B10 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3D7CDA22E47A2E00CE5B10 /* UIImage+Extensions.swift */; };
+		FD3D7CDD22E4967700CE5B10 /* Log+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3D7CDC22E4967700CE5B10 /* Log+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +115,9 @@
 		FD3D7CCA22E3ED1000CE5B10 /* UIAlertController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extensions.swift"; sourceTree = "<group>"; };
 		FD3D7CCC22E3ED6B00CE5B10 /* UploadImageServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImageServiceType.swift; sourceTree = "<group>"; };
 		FD3D7CCE22E3ED7E00CE5B10 /* UploadImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImageService.swift; sourceTree = "<group>"; };
+		FD3D7CD622E4678800CE5B10 /* Realm+Migration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Realm+Migration.swift"; sourceTree = "<group>"; };
+		FD3D7CDA22E47A2E00CE5B10 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
+		FD3D7CDC22E4967700CE5B10 /* Log+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Log+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,6 +229,9 @@
 				FD3D7CB922E3A0E800CE5B10 /* UIView+Extensions.swift */,
 				FD3D7CC822E3ECD400CE5B10 /* UIViewController+Extensions.swift */,
 				FD3D7CCA22E3ED1000CE5B10 /* UIAlertController+Extensions.swift */,
+				FD3D7CDA22E47A2E00CE5B10 /* UIImage+Extensions.swift */,
+				FD3D7CD622E4678800CE5B10 /* Realm+Migration.swift */,
+				FD3D7CDC22E4967700CE5B10 /* Log+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -509,10 +518,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD3D7CD722E4678800CE5B10 /* Realm+Migration.swift in Sources */,
 				FD3D7CC222E3EBBA00CE5B10 /* RxImagePickerDelegateProxy.swift in Sources */,
 				FD2254B722E0FCAC006301CE /* ViewController.swift in Sources */,
 				FD3D7CC522E3EC3900CE5B10 /* UIImagePickerController+Rx.swift in Sources */,
 				FD3D7CBA22E3A0E800CE5B10 /* UIView+Extensions.swift in Sources */,
+				FD3D7CDD22E4967700CE5B10 /* Log+Extensions.swift in Sources */,
 				FD3D7CC722E3EC6100CE5B10 /* UIImagePickerController+RxCreate.swift in Sources */,
 				FD3D7CCF22E3ED7E00CE5B10 /* UploadImageService.swift in Sources */,
 				FD3D7CB222E34BAE00CE5B10 /* OverviewViewController.swift in Sources */,
@@ -523,6 +534,7 @@
 				FD2254E522E1911A006301CE /* EditExpenseViewController.swift in Sources */,
 				FD2254DF22E10C8C006301CE /* SceneTransitionType.swift in Sources */,
 				FD2254B522E0FCAC006301CE /* AppDelegate.swift in Sources */,
+				FD3D7CDB22E47A2E00CE5B10 /* UIImage+Extensions.swift in Sources */,
 				FD2254F522E19B59006301CE /* TransactionItem.swift in Sources */,
 				FD2254E922E197FA006301CE /* TransactionsViewController.swift in Sources */,
 				FD3D7CBE22E3E71700CE5B10 /* OverviewViewModel.swift in Sources */,

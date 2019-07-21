@@ -15,8 +15,10 @@ import RxDataSources
 import RxGesture
 
 final class EditExpenseViewController: ViewController, BindableType {
-  @IBOutlet weak fileprivate var addImage: UIButton!
-  @IBOutlet weak fileprivate var addImageView: UIImageView!
+  @IBOutlet weak fileprivate var removeImageButton: UIButton!
+  @IBOutlet weak fileprivate var selectedImageStackView: UIStackView!
+  @IBOutlet weak fileprivate var selectPhotoButton: UIButton!
+  @IBOutlet weak fileprivate var photoImageView: UIImageView!
   @IBOutlet weak fileprivate var categoryImageView: UIImageView!
   @IBOutlet weak fileprivate var cancelBarButton: UIBarButtonItem!
   @IBOutlet weak fileprivate var doneBarButton: UIBarButtonItem!
@@ -81,11 +83,7 @@ final class EditExpenseViewController: ViewController, BindableType {
     
     categoryPicker.selectRow(CategoryType.index(of: viewModel.transaction.categoryType), inComponent: 0, animated: true)
     
-    viewModel.set(inputs: addImage.rx.tap.asSignal(), wireframe: UploadImageService(view: self))
-    
-    viewModel.selectedImage
-    .asObservable().bind(to: addImageView.rx.image)
-    .disposed(by: rx.disposeBag)
+    bindSelectPhotoUI()
   }
   
   override func viewDidAppear(_ animated: Bool) {
@@ -96,6 +94,7 @@ final class EditExpenseViewController: ViewController, BindableType {
 // MARK: - Private Methods
 private extension EditExpenseViewController {
   func configureUI() {
+    photoImageView.roundCorners(withRadius: 8)
     amountField.textColor = .darkGray
     categoryImageView.tintColor = .white
     datePicker.datePickerMode = .date
@@ -110,7 +109,6 @@ private extension EditExpenseViewController {
     }, titleForRow: { (_, _, items, row, _) -> String? in
       return items[row]
     })
-    
     categoryField.inputView = categoryPicker
   }
   
@@ -129,5 +127,27 @@ private extension EditExpenseViewController {
         self?.view.endEditing(true)
       })
       .disposed(by: rx.disposeBag)
+  }
+  
+  func bindSelectPhotoUI() {
+    viewModel.imagePathSubject
+      .asObservable()
+      .map { UIImage.load(fileName: $0) }
+      .bind(to: photoImageView.rx.image)
+      .disposed(by: rx.disposeBag)
+    
+    viewModel.set(inputs: selectPhotoButton.rx.tap.asSignal(), remove: removeImageButton.rx.tap.asSignal(), wireframe: UploadImageService(view: self))
+    
+    viewModel.selectedImage
+      .asObservable()
+      .bind(to: photoImageView.rx.image)
+      .disposed(by: rx.disposeBag)
+    
+    viewModel.hasImage
+      .bind(to: selectedImageStackView.rx.isHidden)
+      .disposed(by: rx.disposeBag)
+    
+    viewModel.imagePathSubject
+      .onNext(viewModel.transaction.imagePath)
   }
 }

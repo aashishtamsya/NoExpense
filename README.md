@@ -18,6 +18,7 @@ iOS application which only tracks your expenses.
 
 [Website Coming Soon](https://www.aashishtamsya.com/work/noexpense)
 
+
 ## Table of Content.
 
  - [Requirements](#requirements)
@@ -32,6 +33,7 @@ iOS application which only tracks your expenses.
  - [EmptyState](#emptystate)
  - [Contributor](#contributor)
  - [License](#license)
+ - [Issues](#issues)
 
  
 ## Requirements
@@ -82,3 +84,7 @@ The following project has been excuted with the help of tracking task in [Trello
 ## License
 
 NoExpense is released under the MIT license. See LICENSE for details.
+
+## Issues
+
+Fastlane: [mini_magick dependency contains security vulnerability](https://github.com/fastlane/fastlane/issues/15044)

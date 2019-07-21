@@ -63,7 +63,7 @@ private extension Date {
   ///
   /// - Parameter calendar: instance of calendar to retrieve the components of the time.
   /// - Returns: returns relative or colloquial time string
-  func getSinceTimeAgo(fromCalendar calendar: Calendar) -> String? { // swiftlint:disable:this cyclomatic_complexity function_body_length
+  func getSinceTimeAgo(fromCalendar calendar: Calendar) -> String? { // swiftlint:disable:this cyclomatic_complexity
     guard !isToday else {
       return "Today".localized
     }
@@ -99,7 +99,6 @@ private extension Date {
       }
     }
     if let interval = calendar.dateComponents([.hour], from: self, to: now).hour {
-      print(interval)
       if interval > 0 {
         return interval == 1 ? String(format: "AHourAgo".localized, interval) : String(format: "HoursAgo".localized, interval)
       } else if interval == 0 {
@@ -129,7 +128,6 @@ private extension Date {
   func startDateOfCurrentMonth(from calendar: Calendar) -> Date? {
     let components = calendar.dateComponents([.year, .month], from: self)
     let startOfMonth = calendar.date(from: components)
-    print(startOfMonth)
     return startOfMonth
   }
   func endDateOfCurrentMonth(from calendar: Calendar) -> Date? {
@@ -138,7 +136,6 @@ private extension Date {
     components.month = 1
     components.day = -1
     let endOfMonth = calendar.date(byAdding: components, to: startOfMonth)
-    print(endOfMonth)
     return endOfMonth
   }
 }

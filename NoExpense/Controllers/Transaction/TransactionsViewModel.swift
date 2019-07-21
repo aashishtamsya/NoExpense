@@ -43,10 +43,19 @@ struct TransactionsViewModel {
         .create(amount: 0)
         .flatMap({ transaction -> Observable<Void> in
           let editViewModel = EditExpenseViewModel(transaction: transaction, coordinator: self.sceneCoordinator, updateAction: self.onUpdate(transcation: transaction), cancelAction: self.onDelete(transaction: transaction))
-          return self.sceneCoordinator.transition(to: Scene.editExpense(editViewModel), type: .modal)
+          return self.sceneCoordinator.transition(to: .editExpense(editViewModel), type: .modal)
             .asObservable()
             .map { _ in }
         })
+    }
+  }
+  
+  func expense(of type: OverviewType) -> CocoaAction {
+    return CocoaAction { _ in
+      let overviewViewModel = OverviewViewModel(type: type, service: self.transactionService, coordinator: self.sceneCoordinator)
+      return self.sceneCoordinator.transition(to: .overview(overviewViewModel), type: .modal)
+        .asObservable()
+        .map { _ in }
     }
   }
   

@@ -22,6 +22,11 @@ extension Scene {
       var viewController = navigationController.viewControllers.first! as! EditExpenseViewController
       viewController.bind(viewModel: viewModel)
       return navigationController
+    case .overview(let viewModel):
+      let navigationController = UIStoryboard(name: "Overview", bundle: nil).instantiateViewController(withIdentifier: "OverviewNavigationController") as! UINavigationController
+      var viewController = navigationController.viewControllers.first! as! OverviewViewController
+      viewController.bind(viewModel: viewModel)
+      return navigationController
     }
   }
 }

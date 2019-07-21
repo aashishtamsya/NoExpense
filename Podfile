@@ -10,6 +10,7 @@ def shared_pods
   pod 'NSObject+Rx', '~> 5.0.0'
   pod 'RealmSwift', '~> 3.17.1'
   pod 'RxRealm', '~> 1.0.0'
+  pod 'PieCharts', '~> 0.0.7'
 end
 
 target 'NoExpense' do

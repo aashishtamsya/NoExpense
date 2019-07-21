@@ -30,6 +30,7 @@ protocol TransactionServiceType {
   
   func transactions() -> Observable<Results<TransactionItem>>
   
+  func transactionsThisMonth() -> Observable<Results<TransactionItem>>
   func expensesThisMonth() -> Observable<Int>
   func totalExpenses() -> Observable<Int>
   func expenseStatistics() -> Observable<ExpenseStatistics>

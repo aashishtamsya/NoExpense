@@ -11,4 +11,5 @@ import Foundation
 enum Scene {
   case expenses(TransactionsViewModel)
   case editExpense(EditExpenseViewModel)
+  case overview(OverviewViewModel)
 }

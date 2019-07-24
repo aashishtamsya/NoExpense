@@ -11,12 +11,12 @@
 iOS application which only tracks your expenses. 
 
 - Application was made as part to compititve codding challenge and entire development took 3 days. 
--  Written in RxSwift and Swift 5.0 the application has features to add, update and delete transactions. 
+- Written in RxSwift and Swift 5.0 the application has features to add, update and delete transactions. 
 - You can also view overview of the transaction made based of total expense and current month.
 - Image attachments from gallery or camera is also available in the application.
 - Realm mobile database was used to cache the transaction on device locally.
 
-[Website Coming Soon](https://www.aashishtamsya.com/work/noexpense)
+[Website](https://www.aashishtamsya.com/work/noexpenses)
 
 
 ## Table of Content.

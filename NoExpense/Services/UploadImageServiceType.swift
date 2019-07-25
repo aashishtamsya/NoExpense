@@ -11,6 +11,6 @@ import RxSwift
 import RxCocoa
 
 protocol UploadImageServiceType {
-  func showActionSheet<T>(title: String, message: String, actions: [ActionSheetItem<T>])
+  func showActionSheet<T>(title: String, message: String, actions: [ActionSheetItem<T>], withPopoverView popoverView: UIView)
   var selectedImage: BehaviorRelay<UIImage?> { get }
 }

@@ -136,7 +136,7 @@ private extension EditExpenseViewController {
       .bind(to: photoImageView.rx.image)
       .disposed(by: rx.disposeBag)
     
-    viewModel.set(inputs: selectPhotoButton.rx.tap.asSignal(), remove: removeImageButton.rx.tap.asSignal(), wireframe: UploadImageService(view: self))
+    viewModel.set(inputs: selectPhotoButton.rx.tap.asSignal(), remove: removeImageButton.rx.tap.asSignal(), wireframe: UploadImageService(view: self), popOverView: selectPhotoButton)
     
     viewModel.selectedImage
       .asObservable()

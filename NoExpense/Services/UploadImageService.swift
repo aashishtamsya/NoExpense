@@ -24,8 +24,8 @@ class UploadImageService: UploadImageServiceType {
     self.selectedImage = BehaviorRelay<UIImage?>(value: nil)
   }
   
-  func showActionSheet<T>(title: String, message: String, actions: [ActionSheetItem<T>]) {
-    viewController?.showActionSheet(title: title, message: message, actions: actions)
+  func showActionSheet<T>(title: String, message: String, actions: [ActionSheetItem<T>], withPopoverView popoverView: UIView) {
+    viewController?.showActionSheet(title: title, message: message, actions: actions, withPopoverView: popoverView)
       .subscribe({ [unowned self] event in
         if let sourceType = event.element as? UIImagePickerController.SourceType {
           switch sourceType {

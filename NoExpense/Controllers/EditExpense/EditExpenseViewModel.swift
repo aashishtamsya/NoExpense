@@ -52,7 +52,7 @@ class EditExpenseViewModel {
     }
   }
   
-  func set(inputs: Inputs, remove: Inputs, wireframe: UploadImageWireframe) {
+  func set(inputs: Inputs, remove: Inputs, wireframe: UploadImageWireframe, popOverView: UIView) {
     selectedImage = wireframe.selectedImage
     
     selectedImage.subscribe(onNext: { [weak self] image in
@@ -70,7 +70,7 @@ class EditExpenseViewModel {
       if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
         actions.insert(ActionSheetItem<UIImagePickerController.SourceType>(title: "ChooseFromGallery".localized, selectType: .photoLibrary, style: .default), at: 0)
       }
-      wireframe.showActionSheet(title: "", message: "", actions: actions)
+      wireframe.showActionSheet(title: "", message: "", actions: actions, withPopoverView: popOverView)
     })
       .disposed(by: disposeBag)
     

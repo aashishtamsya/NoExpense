@@ -89,6 +89,7 @@ final class EditExpenseViewController: ViewController, BindableType {
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
     amountField.becomeFirstResponder()
+    logEventAsync(eventType: .edit_transaction_viewed)
   }
 }
 // MARK: - Private Methods

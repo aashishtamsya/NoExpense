@@ -16,6 +16,11 @@ final class OverviewViewController: ViewController, BindableType {
   
   var viewModel: OverviewViewModel!
   
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    logEventAsync(eventType: .overview_viewed, parameters: ["type": viewModel.overviewType.rawValue])
+  }
+  
   func bindViewModel() {
     cancelBarButton.rx.action = viewModel.onCancel
     totalExpenseChart.layers = viewModel.pieChartLayers

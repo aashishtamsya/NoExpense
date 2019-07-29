@@ -53,6 +53,8 @@
 		FD3D7CDB22E47A2E00CE5B10 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3D7CDA22E47A2E00CE5B10 /* UIImage+Extensions.swift */; };
 		FD3D7CDD22E4967700CE5B10 /* Log+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3D7CDC22E4967700CE5B10 /* Log+Extensions.swift */; };
 		FD66D23A22F627F900F3F824 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FD66D23922F627F800F3F824 /* GoogleService-Info.plist */; };
+		FD66D23F22F62A0700F3F824 /* AnalyticsEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD66D23E22F62A0700F3F824 /* AnalyticsEvent.swift */; };
+		FD66D24122F62A3400F3F824 /* AnalyticsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD66D24022F62A3400F3F824 /* AnalyticsHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +122,8 @@
 		FD3D7CDA22E47A2E00CE5B10 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		FD3D7CDC22E4967700CE5B10 /* Log+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Log+Extensions.swift"; sourceTree = "<group>"; };
 		FD66D23922F627F800F3F824 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FD66D23E22F62A0700F3F824 /* AnalyticsEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyticsEvent.swift; sourceTree = "<group>"; };
+		FD66D24022F62A3400F3F824 /* AnalyticsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,13 +190,11 @@
 			isa = PBXGroup;
 			children = (
 				FD2254B422E0FCAC006301CE /* AppDelegate.swift */,
-				FD22550B22E1EADB006301CE /* Localization */,
 				FD2254E322E190F5006301CE /* Controllers */,
-				FD2254E022E18F7D006301CE /* Extensions */,
 				FD2254F322E19B47006301CE /* Model */,
 				FD2254D522E1088F006301CE /* Scene */,
 				FD2254F022E19AE6006301CE /* Services */,
-				FD2254FC22E1B657006301CE /* Cells */,
+				FD66D23B22F629B800F3F824 /* Shared */,
 				FD2254BB22E0FCAE006301CE /* Assets.xcassets */,
 				FD2254BD22E0FCAE006301CE /* LaunchScreen.storyboard */,
 				FD66D23922F627F800F3F824 /* GoogleService-Info.plist */,
@@ -328,6 +330,26 @@
 				FD3D7CC622E3EC6100CE5B10 /* UIImagePickerController+RxCreate.swift */,
 			);
 			path = "UIImagePicker+Rx";
+			sourceTree = "<group>";
+		};
+		FD66D23B22F629B800F3F824 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				FD66D23C22F629D600F3F824 /* Analytics */,
+				FD2254E022E18F7D006301CE /* Extensions */,
+				FD2254FC22E1B657006301CE /* Cells */,
+				FD22550B22E1EADB006301CE /* Localization */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		FD66D23C22F629D600F3F824 /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				FD66D23E22F62A0700F3F824 /* AnalyticsEvent.swift */,
+				FD66D24022F62A3400F3F824 /* AnalyticsHelper.swift */,
+			);
+			path = Analytics;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -523,6 +545,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD3D7CD722E4678800CE5B10 /* Realm+Migration.swift in Sources */,
+				FD66D23F22F62A0700F3F824 /* AnalyticsEvent.swift in Sources */,
 				FD3D7CC222E3EBBA00CE5B10 /* RxImagePickerDelegateProxy.swift in Sources */,
 				FD2254B722E0FCAC006301CE /* ViewController.swift in Sources */,
 				FD3D7CC522E3EC3900CE5B10 /* UIImagePickerController+Rx.swift in Sources */,
@@ -553,6 +576,7 @@
 				FD2254F722E1A02E006301CE /* BindableType.swift in Sources */,
 				FD3D7CCD22E3ED6B00CE5B10 /* UploadImageServiceType.swift in Sources */,
 				FD2254D722E1089A006301CE /* Scene.swift in Sources */,
+				FD66D24122F62A3400F3F824 /* AnalyticsHelper.swift in Sources */,
 				FD2254EF22E19AB5006301CE /* TransactionsViewModel.swift in Sources */,
 				FD3D7CCB22E3ED1000CE5B10 /* UIAlertController+Extensions.swift in Sources */,
 				FD2254D922E108CF006301CE /* SceneCoordinator.swift in Sources */,

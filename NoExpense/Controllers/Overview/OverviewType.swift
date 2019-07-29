@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum OverviewType {
+enum OverviewType: String {
   case totalExpense
   case thisMonth
 }

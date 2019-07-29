@@ -26,12 +26,14 @@ struct TransactionsViewModel {
   }
   
   func onDelete(transaction: TransactionItem) -> CocoaAction {
+    logEventAsync(eventType: .transaction_removed)
     return CocoaAction {
       return self.transactionService.delete(transaction: transaction).map { _ in }
     }
   }
   
-  func onUpdate(transcation: TransactionItem) -> Action<UpdateInfo, Void> {
+  func onUpdate(transcation: TransactionItem, isUpdate: Bool = false) -> Action<UpdateInfo, Void> {
+    _ = isUpdate ? logEventAsync(eventType: .transaction_updated) : logEventAsync(eventType: .transaction_added)
     return Action { newUpdateInfo in
       return self.transactionService.update(transcation: transcation, updateInfo: newUpdateInfo).map { _ in }
     }
@@ -77,7 +79,7 @@ struct TransactionsViewModel {
   
   lazy var editAction: Action<TransactionItem, Swift.Never> = { this in
     return Action { transaction in
-      let editViewModel = EditExpenseViewModel(transaction: transaction, service: this.transactionService, coordinator: this.sceneCoordinator, updateAction: this.onUpdate(transcation: transaction))
+      let editViewModel = EditExpenseViewModel(transaction: transaction, service: this.transactionService, coordinator: this.sceneCoordinator, updateAction: this.onUpdate(transcation: transaction, isUpdate: true))
       return this.sceneCoordinator
         .transition(to: Scene.editExpense(editViewModel), type: .modal)
         .asObservable()

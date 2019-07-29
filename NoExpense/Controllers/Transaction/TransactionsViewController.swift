@@ -35,6 +35,11 @@ final class TransactionsViewController: ViewController, BindableType {
     }
   }
   
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    logEventAsync(eventType: .transcation_list_viewed)
+  }
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -75,14 +80,14 @@ final class TransactionsViewController: ViewController, BindableType {
     
     tableView.rx.itemSelected
       .map { [unowned self] indexPath in
-        try! self.dataSource.model(at: indexPath) as! TransactionItem
+        return try! self.dataSource.model(at: indexPath) as! TransactionItem
       }
       .subscribe(viewModel.editAction.inputs)
       .disposed(by: rx.disposeBag)
     
     tableView.rx.itemDeleted
       .map { [unowned self] indexPath in
-        try! self.dataSource.model(at: indexPath) as! TransactionItem
+        return try! self.dataSource.model(at: indexPath) as! TransactionItem
       }
       .subscribe(viewModel.deleteAction.inputs)
       .disposed(by: rx.disposeBag)

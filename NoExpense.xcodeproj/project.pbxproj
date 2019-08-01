@@ -52,9 +52,9 @@
 		FD3D7CD722E4678800CE5B10 /* Realm+Migration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3D7CD622E4678800CE5B10 /* Realm+Migration.swift */; };
 		FD3D7CDB22E47A2E00CE5B10 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3D7CDA22E47A2E00CE5B10 /* UIImage+Extensions.swift */; };
 		FD3D7CDD22E4967700CE5B10 /* Log+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3D7CDC22E4967700CE5B10 /* Log+Extensions.swift */; };
-		FD66D23A22F627F900F3F824 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FD66D23922F627F800F3F824 /* GoogleService-Info.plist */; };
 		FD66D23F22F62A0700F3F824 /* AnalyticsEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD66D23E22F62A0700F3F824 /* AnalyticsEvent.swift */; };
 		FD66D24122F62A3400F3F824 /* AnalyticsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD66D24022F62A3400F3F824 /* AnalyticsHelper.swift */; };
+		FD66D24522F6330500F3F824 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FD66D24422F6330500F3F824 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,9 +121,9 @@
 		FD3D7CD622E4678800CE5B10 /* Realm+Migration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Realm+Migration.swift"; sourceTree = "<group>"; };
 		FD3D7CDA22E47A2E00CE5B10 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		FD3D7CDC22E4967700CE5B10 /* Log+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Log+Extensions.swift"; sourceTree = "<group>"; };
-		FD66D23922F627F800F3F824 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FD66D23E22F62A0700F3F824 /* AnalyticsEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyticsEvent.swift; sourceTree = "<group>"; };
 		FD66D24022F62A3400F3F824 /* AnalyticsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsHelper.swift; sourceTree = "<group>"; };
+		FD66D24422F6330500F3F824 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,7 +197,7 @@
 				FD66D23B22F629B800F3F824 /* Shared */,
 				FD2254BB22E0FCAE006301CE /* Assets.xcassets */,
 				FD2254BD22E0FCAE006301CE /* LaunchScreen.storyboard */,
-				FD66D23922F627F800F3F824 /* GoogleService-Info.plist */,
+				FD66D24422F6330500F3F824 /* GoogleService-Info.plist */,
 				FD2254C022E0FCAE006301CE /* Info.plist */,
 			);
 			path = NoExpense;
@@ -438,7 +438,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD2254BF22E0FCAE006301CE /* LaunchScreen.storyboard in Resources */,
-				FD66D23A22F627F900F3F824 /* GoogleService-Info.plist in Resources */,
+				FD66D24522F6330500F3F824 /* GoogleService-Info.plist in Resources */,
 				FD22550D22E1EAFC006301CE /* Localizable.strings in Resources */,
 				FD3D7CB422E34BB600CE5B10 /* Overview.storyboard in Resources */,
 				FD2254EB22E198E6006301CE /* EditExpense.storyboard in Resources */,

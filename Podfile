@@ -13,6 +13,7 @@ def shared_pods
   pod 'PieCharts', '~> 0.0.7'
   pod 'RxGesture', '~> 3.0.0'
   pod 'Firebase/Analytics'
+  pod 'SwiftDate', '~> 6.0.3'
 end
 
 target 'NoExpense' do

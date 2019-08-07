@@ -1,0 +1,36 @@
+/* 
+  Localizable.strings
+  NoExpense
+
+  Created by Aashish Tamsya on 19/07/19.
+  Copyright © 2019 Aashish Tamsya. All rights reserved.
+*/
+
+"Today" = "今天";
+
+"Cancel" = "取消";
+"TakeAPhoto" = "拍張照片";
+"ChooseFromGallery" = "從圖庫中選擇";
+
+"other"="其他";
+"travel" = "旅行";
+"family" = "家庭";
+"entertainment" = "娛樂";
+"home" = "家";
+"food" = "餐飲";
+"drink" = "喝";
+"bills" = "票據";
+"car" = "汽車";
+"utility" = "效用";
+"shopping" = "購物";
+"healthcare" = "衛生保健";
+"clothing" = "服裝";
+"vegetables" = "蔬菜";
+"accommodation" = "住所";
+"transport" = "運輸";
+"hobbies" = "愛好";
+"education" = "教育";
+"pets" = "寵物";
+"kids" = "孩子";
+"vacation" = "假期";
+"gifts" = "禮品";

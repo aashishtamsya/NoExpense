@@ -9,5 +9,5 @@
 import Foundation
 
 extension Int {
-  var expenseString: String { get { return "-₹ \(self)" } }
+  var expenseString: String { get { return "- \(self)" } }
 }

@@ -1,0 +1,21 @@
+
+/* Class = "UILabel"; text = "🍠"; ObjectID = "3zX-5J-br8"; */
+"3zX-5J-br8.text" = "🍠";
+
+/* Class = "UILabel"; text = "Total Expenses"; ObjectID = "Djr-gT-69K"; */
+"Djr-gT-69K.text" = "总支出";
+
+/* Class = "UILabel"; text = "You need to add some expenses!"; ObjectID = "Mkl-wZ-PPg"; */
+"Mkl-wZ-PPg.text" = "您需要添加一些费用！";
+
+/* Class = "UILabel"; text = "This Month"; ObjectID = "Sa1-6Z-38F"; */
+"Sa1-6Z-38F.text" = "这个月";
+
+/* Class = "UILabel"; text = "Sweet potato!"; ObjectID = "YFU-ME-zBL"; */
+"YFU-ME-zBL.text" = "甘薯！";
+
+/* Class = "UIButton"; normalTitle = "ADD EXPENSE"; ObjectID = "YbS-DU-aRW"; */
+"YbS-DU-aRW.normalTitle" = "增加费用";
+
+/* Class = "UINavigationItem"; title = "Transactions"; ObjectID = "ZZq-eO-0hk"; */
+"ZZq-eO-0hk.title" = "交易";

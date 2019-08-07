@@ -54,14 +54,14 @@ final class EditExpenseViewController: ViewController, BindableType {
     categoryPicker.rx.itemSelected
       .subscribe(onNext: { [weak self] item in
         let category = CategoryType.category(at: item.row) ?? .other
-        self?.categoryField.text = category.rawValue.capitalized
+        self?.categoryField.text = category.title
         self?.amountView.backgroundColor = category.color.withAlphaComponent(0.35)
         self?.categoryImageView.image = category.image
       })
       .disposed(by: rx.disposeBag)
     
     datePicker.rx.date
-      .map { $0.friendlyDateString ?? "Today" }.bind(to: dateField.rx.text)
+      .map { $0.friendlyDateString ?? "Today".localized }.bind(to: dateField.rx.text)
       .disposed(by: rx.disposeBag)
     
     viewModel.categories

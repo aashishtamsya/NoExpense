@@ -1,0 +1,15 @@
+
+/* Class = "UITextField"; placeholder = "category"; ObjectID = "Cql-Tb-uql"; */
+"Cql-Tb-uql.placeholder" = "类别";
+
+/* Class = "UITextField"; placeholder = "Note"; ObjectID = "KbN-Oe-3eU"; */
+"KbN-Oe-3eU.placeholder" = "注意";
+
+/* Class = "UITextField"; placeholder = "Today"; ObjectID = "V5p-3V-8IN"; */
+"V5p-3V-8IN.placeholder" = "今天";
+
+/* Class = "UITextField"; placeholder = "amount"; ObjectID = "dnW-ek-2fm"; */
+"dnW-ek-2fm.placeholder" = "量";
+
+/* Class = "UILabel"; text = "Select Photo"; ObjectID = "yWa-Nm-Jal"; */
+"yWa-Nm-Jal.text" = "选择照片";

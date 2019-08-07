@@ -12,10 +12,11 @@ import RxDataSources
 
 class TransactionItem: Object {
   @objc dynamic var uid = 0
-  @objc dynamic var category = "Other"
+  @objc dynamic var category = CategoryType.other.title
   var categoryType: CategoryType {
     get {
-      return CategoryType(rawValue: category.lowercased()) ?? .other
+      return CategoryType.type(category) ?? .other
+//      return CategoryType(rawValue: category.lowercased()) ?? .other
     }
   }
   @objc dynamic var added = Date()

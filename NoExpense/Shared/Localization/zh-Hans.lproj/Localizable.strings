@@ -1,0 +1,64 @@
+/* 
+  Localizable.strings
+  NoExpense
+
+  Created by Aashish Tamsya on 19/07/19.
+  Copyright © 2019 Aashish Tamsya. All rights reserved.
+*/
+
+"AMomentAgo" = "刚才";
+"AYearAgo"   = "％@ 年前";
+"YearsAgo"   = "％@ 年前";
+"AMonthAgo"  = "％@ 月前";
+"MonthsAgo"  = "％@ 月前";
+"AWeekAgo"   = "％@ 周前";
+"WeeksAgo"   = "％@ 周前";
+"ADayAgo"    = "昨天";
+"DaysAgo"    = "％@ 天前";
+"AHourAgo"   = "％@ 小时前";
+"HoursAgo"   = "％@ 小时前";
+"AMinuteAgo" = "％@ 分钟前";
+"MinutesAgo" = "％@ 分钟前";
+
+"Today" = "今天";
+
+"AMomentBefore" = "一会儿";
+"AYearBefore"   = "在％@年";
+"YearsBefore"   = "在％@年";
+"AMonthBefore"  = "在％@月";
+"MonthsBefore"  = "在％@个月";
+"AWeekBefore"   = "在％@周";
+"WeeksBefore"   = "在％@周";
+"ADayBefore"    = "明天";
+"DaysBefore"    = "在％@天";
+"AHourBefore"   = "在％@小时";
+"HoursBefore"   = "在％@小时";
+"AMinuteBefore" = "在％@分钟";
+"MinutesBefore" = "在％@分钟";
+
+"Cancel" = "取消";
+"TakeAPhoto" = "拍张照片";
+"ChooseFromGallery" = "从图库中选择";
+
+"other"="其他";
+"travel" = "旅行";
+"family" = "家庭";
+"entertainment" = "娱乐";
+"home" = "家";
+"food" = "餐饮";
+"drink" = "喝";
+"bills" = "票据";
+"car" = "汽车";
+"utility" = "效用";
+"shopping" = "购物";
+"healthcare" = "卫生保健";
+"clothing" = "服装";
+"vegetables" = "蔬菜";
+"accommodation" = "住所";
+"transport" = "运输";
+"hobbies" = "爱好";
+"education" = "教育";
+"pets" = "宠物";
+"kids" = "孩子";
+"vacation" = "假期";
+"gifts" = "礼品";

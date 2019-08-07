@@ -70,7 +70,7 @@ enum CategoryType: String {
   
   static let items: [CategoryType] = [.other, .travel, .family, .entertainment, .home, .food, .drink, .bills, .car, .utility, .shopping, .healthcare, .clothing, .vegetables, .accommodation, .transport, .hobbies, .education, .pets, .kids, .vacation, .gifts]
   
-  static let stringValues: [String] = CategoryType.items.map { $0.rawValue.capitalized }
+  static let stringValues: [String] = CategoryType.items.map { $0.title }
   
   static func category(at index: Int) -> CategoryType? {
     guard index < items.count else { return nil }
@@ -79,5 +79,15 @@ enum CategoryType: String {
   
   static func index(of category: CategoryType) -> Int {
     return items.firstIndex(of: category) ?? 0
+  }
+  
+  var title: String {
+    get {
+      return rawValue.localized.capitalized
+    }
+  }
+  
+  static func type(_ title: String) -> CategoryType? {
+    return items.filter { $0.title == title }.first
   }
 }

@@ -1,0 +1,36 @@
+/* 
+  Localizable.strings
+  NoExpense
+
+  Created by Aashish Tamsya on 19/07/19.
+  Copyright © 2019 Aashish Tamsya. All rights reserved.
+*/
+
+"Today" = "Today";
+
+"Cancel" = "Cancel";
+"TakeAPhoto" = "Take a photo";
+"ChooseFromGallery" = "Choose from gallery";
+
+"other"="other";
+"travel" = "travel";
+"family" = "family";
+"entertainment" = "entertainment";
+"home" = "home";
+"food" = "food";
+"drink" = "drink";
+"bills" = "bills";
+"car" = "car";
+"utility" = "utility";
+"shopping" = "shopping";
+"healthcare" = "healthcare";
+"clothing" = "clothing";
+"vegetables" = "vegetables";
+"accommodation" = "accommodation";
+"transport" = "transport";
+"hobbies" = "hobbies";
+"education" = "education";
+"pets" = "pets";
+"kids" = "kids";
+"vacation" = "vacation";
+"gifts" = "gifts";

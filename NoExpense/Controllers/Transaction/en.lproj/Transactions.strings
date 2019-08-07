@@ -1,0 +1,21 @@
+
+/* Class = "UILabel"; text = "🍠"; ObjectID = "3zX-5J-br8"; */
+"3zX-5J-br8.text" = "🍠";
+
+/* Class = "UILabel"; text = "Total Expenses"; ObjectID = "Djr-gT-69K"; */
+"Djr-gT-69K.text" = "Total Expenses";
+
+/* Class = "UILabel"; text = "You need to add some expenses!"; ObjectID = "Mkl-wZ-PPg"; */
+"Mkl-wZ-PPg.text" = "You need to add some expenses!";
+
+/* Class = "UILabel"; text = "This Month"; ObjectID = "Sa1-6Z-38F"; */
+"Sa1-6Z-38F.text" = "This Month";
+
+/* Class = "UILabel"; text = "Sweet potato!"; ObjectID = "YFU-ME-zBL"; */
+"YFU-ME-zBL.text" = "Sweet potato!";
+
+/* Class = "UIButton"; normalTitle = "ADD EXPENSE"; ObjectID = "YbS-DU-aRW"; */
+"YbS-DU-aRW.normalTitle" = "ADD EXPENSE";
+
+/* Class = "UINavigationItem"; title = "Transactions"; ObjectID = "ZZq-eO-0hk"; */
+"ZZq-eO-0hk.title" = "Transactions";

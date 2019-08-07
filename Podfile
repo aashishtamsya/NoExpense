@@ -14,6 +14,7 @@ def shared_pods
   pod 'RxGesture', '~> 3.0.0'
   pod 'Firebase/Analytics'
   pod 'SwiftDate', '~> 6.0.3'
+  pod 'Google-Mobile-Ads-SDK'
 end
 
 target 'NoExpense' do

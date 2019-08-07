@@ -55,6 +55,7 @@
 		FD902E9422F9E6C100194972 /* Transactions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD902E9622F9E6C100194972 /* Transactions.storyboard */; };
 		FD902E9B22F9E6CC00194972 /* EditExpense.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD902E9D22F9E6CC00194972 /* EditExpense.storyboard */; };
 		FD902EA422F9E6FD00194972 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FD902EA622F9E6FD00194972 /* Localizable.strings */; };
+		FD902EB422FAA01300194972 /* UnifiedNativeAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD902EB322FAA01300194972 /* UnifiedNativeAdView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -143,6 +144,7 @@
 		FD902EAF22F9F9D200194972 /* zh-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-HK"; path = "zh-HK.lproj/EditExpense.strings"; sourceTree = "<group>"; };
 		FD902EB022F9F9D200194972 /* zh-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-HK"; path = "zh-HK.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		FD902EB122F9F9D200194972 /* zh-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-HK"; path = "zh-HK.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		FD902EB322FAA01300194972 /* UnifiedNativeAdView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UnifiedNativeAdView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -263,6 +265,7 @@
 		FD2254E322E190F5006301CE /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FD902EB222FAA00700194972 /* NativeAdView */,
 				FD2254B622E0FCAC006301CE /* ViewController.swift */,
 				FD3D7CB022E34B9A00CE5B10 /* Overview */,
 				FD2254E722E196FE006301CE /* Transaction */,
@@ -371,6 +374,14 @@
 			path = Analytics;
 			sourceTree = "<group>";
 		};
+		FD902EB222FAA00700194972 /* NativeAdView */ = {
+			isa = PBXGroup;
+			children = (
+				FD902EB322FAA01300194972 /* UnifiedNativeAdView.xib */,
+			);
+			path = NativeAdView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -466,6 +477,7 @@
 				FD902E9B22F9E6CC00194972 /* EditExpense.storyboard in Resources */,
 				FD2254BC22E0FCAE006301CE /* Assets.xcassets in Resources */,
 				FD902E9422F9E6C100194972 /* Transactions.storyboard in Resources */,
+				FD902EB422FAA01300194972 /* UnifiedNativeAdView.xib in Resources */,
 				FD22550022E1B67C006301CE /* TransactionCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

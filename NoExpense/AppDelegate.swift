@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import GoogleMobileAds
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     FirebaseApp.configure()
+    GADMobileAds.sharedInstance().start(completionHandler: nil)
     realmMigration()
     debugLog("🔥", NSHomeDirectory().appending("/Documents/"))
     RxImagePickerDelegateProxy.register { RxImagePickerDelegateProxy(imagePicker: $0) }

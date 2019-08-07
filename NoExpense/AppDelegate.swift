@@ -9,10 +9,12 @@
 import UIKit
 import Firebase
 import GoogleMobileAds
+import Reachability
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
   var window: UIWindow?
+  var reachability: Reachability?
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     FirebaseApp.configure()
@@ -25,6 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let transactionsViewModel = TransactionsViewModel(transactionService: service, coordinator: sceneCoordinator)
     let firstScene = Scene.expenses(transactionsViewModel)
     sceneCoordinator.transition(to: firstScene, type: .root)
+    reachability = Reachability()
+    try? reachability?.startNotifier()
     return true
   }
 }

@@ -184,7 +184,7 @@
                                 </constraints>
                             </scrollView>
                             <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="xG5-MN-jFv">
-                                <rect key="frame" x="20" y="232.33333333333331" width="374" height="207.33333333333331"/>
+                                <rect key="frame" x="20" y="260.33333333333331" width="374" height="151.33333333333331"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="c5T-AC-12M">
                                         <rect key="frame" x="67.333333333333329" y="0.0" width="239.66666666666669" height="151.33333333333334"/>
@@ -209,22 +209,6 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NBo-56-79r">
-                                        <rect key="frame" x="119.66666666666666" y="167.33333333333337" width="135" height="40"/>
-                                        <color key="backgroundColor" red="0.1137254902" green="0.61176470589999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="135" id="JKI-eh-ciA"/>
-                                            <constraint firstAttribute="height" constant="40" id="gs7-Hg-t2d"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="ADD EXPENSE">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="emptyStateButtonSelected:" destination="1fc-Ud-RgH" eventType="touchUpInside" id="03E-yi-aUp"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -248,7 +232,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="cancelBarButton" destination="fWc-wZ-qhF" id="xFu-PY-Ky9"/>
-                        <outlet property="emptyButton" destination="NBo-56-79r" id="czC-EV-ApH"/>
                         <outlet property="emptyDescriptionLabel" destination="qyS-81-bLu" id="eN8-wR-Sqv"/>
                         <outlet property="emptyIconLabel" destination="e2V-vX-u9H" id="ptG-FL-NRp"/>
                         <outlet property="emptyStackView" destination="xG5-MN-jFv" id="aLp-7l-rwa"/>

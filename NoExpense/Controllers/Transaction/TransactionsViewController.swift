@@ -12,6 +12,8 @@ import RxDataSources
 import Action
 import NSObject_Rx
 import GoogleMobileAds
+import Reachability
+import RxReachability
 
 final class TransactionsViewController: ViewController, BindableType {
   
@@ -26,7 +28,13 @@ final class TransactionsViewController: ViewController, BindableType {
   @IBOutlet weak fileprivate var thisMonthExpenseLabel: UILabel!
   @IBOutlet weak fileprivate var totalExpenseButton: UIButton!
   @IBOutlet weak fileprivate var thisMonthExpenseButton: UIButton!
+  
+  @IBOutlet weak fileprivate var entireStackView: UIStackView!
+  @IBOutlet weak fileprivate var emptyIconLabel: UILabel!
+  @IBOutlet weak fileprivate var emptyTitleLabel: UILabel!
+  @IBOutlet weak fileprivate var emptyDescriptionLabel: UILabel!
 
+  fileprivate let reachability = Reachability()!
   var viewModel: TransactionsViewModel!
   fileprivate var dataSource: RxTableViewSectionedAnimatedDataSource<TransactionSection>!
   fileprivate var interstitial: GADInterstitial!
@@ -45,6 +53,26 @@ final class TransactionsViewController: ViewController, BindableType {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    Reachability.rx.isReachable
+      .bind(to: newTransactionButton.rx.isEnabled)
+      .disposed(by: rx.disposeBag)
+    
+    Reachability.rx.isReachable
+      .subscribe(onNext: { [weak self] isReachable in
+        guard let strongSelf = self else { return }
+        if isReachable {
+          strongSelf.interstitial = strongSelf.createAndLoadInterstitial()
+          strongSelf.viewModel.isEmpty
+            .subscribe(onNext: { (val) in
+              strongSelf.emptyState(hide: !val, isEmpty: val)
+            })
+            .disposed(by: strongSelf.rx.disposeBag)
+        } else {
+          strongSelf.emptyState(title: "InternetConnectionErrorTitle".localized, message: "InternetConnectionError".localized, icon: "🔥", button: "RetryTitle".localized)
+        }
+      })
+      .disposed(by: rx.disposeBag)
+    
     interstitial = createAndLoadInterstitial()
     
     tableView.rowHeight = UITableView.automaticDimension
@@ -127,15 +155,8 @@ final class TransactionsViewController: ViewController, BindableType {
       .bind(to: thisMonthExpenseStackView.rx.isHidden)
       .disposed(by: rx.disposeBag)
     
-    let isTransactionsEmpty = Observable.combineLatest(totalExpenseShared, thisMonthExpenseShared) { $0 == 0 && $1 == 0 }.share()
-    
-    isTransactionsEmpty
+    viewModel.isEmpty
       .bind(to: expenseStackView.rx.isHidden)
-      .disposed(by: rx.disposeBag)
-    
-    isTransactionsEmpty
-      .map { !$0 }
-      .bind(to: emptyStackView.rx.isHidden)
       .disposed(by: rx.disposeBag)
   }
 }
@@ -144,9 +165,7 @@ private extension TransactionsViewController {
   func createAndLoadInterstitial() -> GADInterstitial {
     let interstitial = GADInterstitial(adUnitID: "ca-app-pub-2476036802725781/3456716519")
     interstitial.delegate = self
-    let request = GADRequest()
-    request.testDevices = [kGADSimulatorID]
-    interstitial.load(request)
+    interstitial.load(GADRequest())
     return interstitial
   }
   
@@ -156,6 +175,18 @@ private extension TransactionsViewController {
       return
     }
     interstitial.present(fromRootViewController: self)
+  }
+  
+  func emptyState(title: String? = nil, message: String? = nil, icon: String? = nil, button: String? = nil, hide: Bool = false, isEmpty: Bool = false) {
+    entireStackView.isHidden = !hide
+    totalExpenseButton.isHidden = !hide
+    thisMonthExpenseButton.isHidden = !hide
+    emptyStackView.isHidden = hide
+    guard !hide else { return }
+    emptyTitleLabel.text = isEmpty ? "EmptyTitle".localized : title
+    emptyDescriptionLabel.text = isEmpty ? "EmptyDescription".localized : message
+    emptyIconLabel.text = isEmpty ? "🍠" : icon
+    emptyButton.isHidden = !isEmpty
   }
 }
 

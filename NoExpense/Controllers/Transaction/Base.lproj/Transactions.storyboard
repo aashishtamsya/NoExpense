@@ -189,7 +189,11 @@
                     </navigationItem>
                     <connections>
                         <outlet property="emptyButton" destination="YbS-DU-aRW" id="KRr-RK-6gL"/>
+                        <outlet property="emptyDescriptionLabel" destination="Mkl-wZ-PPg" id="BYK-TQ-mLS"/>
+                        <outlet property="emptyIconLabel" destination="3zX-5J-br8" id="VhL-zY-jKD"/>
                         <outlet property="emptyStackView" destination="tHz-Ho-IMF" id="VCb-ji-0ZQ"/>
+                        <outlet property="emptyTitleLabel" destination="YFU-ME-zBL" id="6jY-Z5-QCe"/>
+                        <outlet property="entireStackView" destination="9YE-uD-u4n" id="f1o-oU-Zi2"/>
                         <outlet property="expenseStackView" destination="Axy-Tw-5yp" id="WvD-QH-mVJ"/>
                         <outlet property="newTransactionButton" destination="5ex-Ii-9v0" id="JVH-fw-Dfq"/>
                         <outlet property="tableView" destination="q9b-DD-eIG" id="065-rW-w75"/>

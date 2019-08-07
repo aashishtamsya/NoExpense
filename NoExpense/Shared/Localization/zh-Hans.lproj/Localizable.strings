@@ -5,9 +5,16 @@
   Created by Aashish Tamsya on 19/07/19.
   Copyright © 2019 Aashish Tamsya. All rights reserved.
 */
+
+"Overview" = "概观";
+
 "InternetConnectionError"        = "似乎是与您的网络连接有问题。";
 "InternetConnectionErrorTitle"   = "你离线";
 "RetryTitle"                     = "再试一次";
+
+"EmptyTitle" = "甘薯！";
+"EmptyDescription" = "您需要添加一些费用！";
+"AddExpense" = "增加费用";
 
 "Today" = "今天";
 

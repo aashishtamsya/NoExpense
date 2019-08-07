@@ -10,6 +10,7 @@ import UIKit
 import PieCharts
 import GoogleMobileAds
 import Reachability
+import RxReachability
 
 final class OverviewViewController: ViewController, BindableType {
   @IBOutlet weak fileprivate var totalExpenseChart: PieChart!
@@ -20,7 +21,6 @@ final class OverviewViewController: ViewController, BindableType {
   @IBOutlet weak fileprivate var outerContentView: UIView!
   
   @IBOutlet weak fileprivate var emptyStackView: UIStackView!
-  @IBOutlet weak fileprivate var emptyButton: UIButton!
   @IBOutlet weak fileprivate var emptyTitleLabel: UILabel!
   @IBOutlet weak fileprivate var emptyDescriptionLabel: UILabel!
   @IBOutlet weak fileprivate var emptyIconLabel: UILabel!
@@ -38,13 +38,17 @@ final class OverviewViewController: ViewController, BindableType {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    NotificationCenter.default.addObserver(self, selector: #selector(OverviewViewController.reachabilityChanged(_:)), name: .reachabilityChanged, object: reachability)
-    do {
-      try reachability.startNotifier()
-    } catch {
-      print("could not start reachability notifier")
-    }
-    check(reachability: reachability)
+    navigationItem.title = "Overview".localized
+    Reachability.rx.isReachable
+      .subscribe(onNext: { [weak self] isReachable in
+        if isReachable {
+          self?.emptyState(hide: true)
+        } else {
+          self?.emptyState(title: "InternetConnectionErrorTitle".localized, message: "InternetConnectionError".localized, icon: "🔥", button: "RetryTitle".localized)
+        }
+      })
+      .disposed(by: rx.disposeBag)
+    
     guard let nibObjects = Bundle.main.loadNibNamed("UnifiedNativeAdView", owner: nil, options: nil),
       let adView = nibObjects.first as? GADUnifiedNativeAdView else {
         assert(false, "Could not load nib file for adView")
@@ -68,20 +72,7 @@ final class OverviewViewController: ViewController, BindableType {
       })
       .disposed(by: rx.disposeBag)
   }
-  
-  deinit {
-    reachability.stopNotifier()
-    NotificationCenter.default.removeObserver(self)
-  }
 }
-// MARK: - Selectors
-private extension OverviewViewController {
-  @objc func reachabilityChanged(_ notification: Notification? = nil) {
-    guard let reachability = notification?.object as? Reachability else { return }
-    check(reachability: reachability)
-  }
-}
-
 extension OverviewViewController: GADUnifiedNativeAdLoaderDelegate {
   override func adLoader(_ adLoader: GADAdLoader, didFailToReceiveAdWithError error: GADRequestError) {
     print("didFailToReceiveAdWithError: \(error.localizedDescription)")
@@ -146,17 +137,6 @@ extension ViewController: GADAdLoaderDelegate {
 }
 // MARK: - Private Methods
 private extension OverviewViewController {
-  func check(reachability: Reachability, isRefresh: Bool = false) {
-    DispatchQueue.main.asyncAfter(deadline: isRefresh ? .now() + .seconds(2) : .now()) { [weak self] in
-      switch reachability.connection {
-      case .wifi, .cellular:
-        self?.emptyState(hide: true)
-      case .none:
-        self?.emptyState(title: "InternetConnectionErrorTitle".localized, message: "InternetConnectionError".localized, icon: "🔥", button: "RetryTitle".localized)
-      }
-    }
-  }
-  
   func setAdView(_ view: GADUnifiedNativeAdView) {
     nativeAdView = view
     nativeAdPlaceholder.addSubview(nativeAdView)
@@ -173,9 +153,7 @@ private extension OverviewViewController {
     adLoader = GADAdLoader(adUnitID: "ca-app-pub-2476036802725781/4521552025", rootViewController: self,
                            adTypes: [ .unifiedNative ], options: nil)
     adLoader.delegate = self
-    let request = GADRequest()
-    request.testDevices = [kGADSimulatorID]
-    adLoader.load(request)
+    adLoader.load(GADRequest())
   }
   
   func emptyState(title: String? = nil, message: String? = nil, icon: String? = nil, button: String? = nil, hide: Bool = false) {
@@ -185,13 +163,5 @@ private extension OverviewViewController {
     emptyTitleLabel.text = title
     emptyDescriptionLabel.text = message
     emptyIconLabel.text = icon
-    emptyButton.setTitle(button, for: .normal)
-  }
-}
-
-// MARK: - @IBActions
-private extension OverviewViewController {
-  @IBAction func emptyStateButtonSelected(_ sender: UIButton) {
-    check(reachability: reachability)
   }
 }

@@ -6,9 +6,15 @@
   Copyright © 2019 Aashish Tamsya. All rights reserved.
 */
 
+"Overview" = "概觀";
+
 "InternetConnectionError"        = "似乎是與您的網絡連接有問題。";
 "InternetConnectionErrorTitle"   = "你離線";
 "RetryTitle"                     = "再試一次";
+
+"EmptyTitle" = "甘藷！";
+"EmptyDescription" = "您需要添加一些費用！";
+"AddExpense" = "增加費用";
 
 "Today" = "今天";
 

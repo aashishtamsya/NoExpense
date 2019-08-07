@@ -76,6 +76,10 @@ PODS:
   - RxGesture (3.0.0):
     - RxCocoa (~> 5.0)
     - RxSwift (~> 5.0)
+  - RxReachability (1.0.0):
+    - ReachabilitySwift (~> 4.3.1)
+    - RxCocoa (~> 5)
+    - RxSwift (~> 5)
   - RxRealm (1.0.0):
     - RealmSwift (~> 3.14)
     - RxSwift (~> 5.0)
@@ -90,11 +94,11 @@ DEPENDENCIES:
   - Google-Mobile-Ads-SDK
   - "NSObject+Rx (~> 5.0.0)"
   - PieCharts (~> 0.0.7)
-  - ReachabilitySwift (~> 4.3.1)
   - RealmSwift (~> 3.17.1)
   - RxCocoa (~> 5.0.0)
   - RxDataSources (~> 4.0.1)
   - RxGesture (~> 3.0.0)
+  - RxReachability (~> 1.0.0)
   - RxRealm (~> 1.0.0)
   - RxSwift (~> 5.0.0)
   - SwiftDate (~> 6.0.3)
@@ -119,6 +123,7 @@ SPEC REPOS:
     - RxCocoa
     - RxDataSources
     - RxGesture
+    - RxReachability
     - RxRealm
     - RxRelay
     - RxSwift
@@ -143,11 +148,12 @@ SPEC CHECKSUMS:
   RxCocoa: fcf32050ac00d801f34a7f71d5e8e7f23026dcd8
   RxDataSources: efee07fa4de48477eca0a4611e6d11e2da9c1114
   RxGesture: 0cd8e37ff9a266e1c31f46bcaed6de1c536bc81e
+  RxReachability: 21d3e96f39bc166a21c357e923f47dec148ca97b
   RxRealm: 1e81dcfca1fb50c3e9b3e1f8102bc875c5156a2e
   RxRelay: 4f7409406a51a55cd88483f21ed898c234d60f18
   RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
   SwiftDate: 8d4f14bf1ef68e95094511504856547bf9e3e1a6
 
-PODFILE CHECKSUM: f1bcca146b8c4b757505760d0d0dd450d347e2ed
+PODFILE CHECKSUM: 276bf3b0d2124de89ed75a8f44618ec838fb2beb
 
 COCOAPODS: 1.7.3

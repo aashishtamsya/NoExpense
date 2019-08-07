@@ -95,4 +95,10 @@ struct TransactionsViewModel {
       return service.delete(transaction: transaction)
     }
   }(self.transactionService)
+  
+  var isEmpty: Observable<Bool> {
+    return self.transactionService
+      .transactions()
+      .map { $0.isEmpty }
+  }
 }

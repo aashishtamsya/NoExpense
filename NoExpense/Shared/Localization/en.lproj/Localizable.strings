@@ -6,9 +6,15 @@
   Copyright © 2019 Aashish Tamsya. All rights reserved.
 */
 
+"Overview" = "Overview";
+
 "InternetConnectionError"        = "There seems to be a problem with your network connection.";
 "InternetConnectionErrorTitle"   = "You're Offline";
 "RetryTitle"                     = "Try Again";
+
+"EmptyTitle" = "Sweet potato!";
+"EmptyDescription" = "You need to add some expenses!";
+"AddExpense" = "ADD EXPENSE";
 
 "Today" = "Today";
 

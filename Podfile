@@ -15,7 +15,7 @@ def shared_pods
   pod 'Firebase/Analytics'
   pod 'SwiftDate', '~> 6.0.3'
   pod 'Google-Mobile-Ads-SDK'
-  pod 'ReachabilitySwift', '~> 4.3.1'
+  pod 'RxReachability', '~> 1.0.0'
 end
 
 target 'NoExpense' do

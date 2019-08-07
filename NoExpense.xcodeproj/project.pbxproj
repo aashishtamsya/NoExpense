@@ -55,8 +55,8 @@
 		FD902E9422F9E6C100194972 /* Transactions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD902E9622F9E6C100194972 /* Transactions.storyboard */; };
 		FD902E9B22F9E6CC00194972 /* EditExpense.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD902E9D22F9E6CC00194972 /* EditExpense.storyboard */; };
 		FD902EA422F9E6FD00194972 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FD902EA622F9E6FD00194972 /* Localizable.strings */; };
-		FD902EB422FAA01300194972 /* UnifiedNativeAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD902EB322FAA01300194972 /* UnifiedNativeAdView.xib */; };
 		FD902EB622FAABDC00194972 /* Ad+Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD902EB522FAABDC00194972 /* Ad+Config.swift */; };
+		FD902EB922FAB58C00194972 /* UnifiedNativeAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD902EBB22FAB58C00194972 /* UnifiedNativeAdView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,7 +127,6 @@
 		FD902E9122F9E6B100194972 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Overview.strings; sourceTree = "<group>"; };
 		FD902E9322F9E6B400194972 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Overview.strings"; sourceTree = "<group>"; };
 		FD902E9522F9E6C100194972 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Transactions.storyboard; sourceTree = "<group>"; };
-		FD902E9822F9E6C300194972 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Transactions.strings; sourceTree = "<group>"; };
 		FD902E9A22F9E6C500194972 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Transactions.strings"; sourceTree = "<group>"; };
 		FD902E9C22F9E6CC00194972 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/EditExpense.storyboard; sourceTree = "<group>"; };
 		FD902E9F22F9E6D000194972 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/EditExpense.strings; sourceTree = "<group>"; };
@@ -145,8 +144,13 @@
 		FD902EAF22F9F9D200194972 /* zh-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-HK"; path = "zh-HK.lproj/EditExpense.strings"; sourceTree = "<group>"; };
 		FD902EB022F9F9D200194972 /* zh-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-HK"; path = "zh-HK.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		FD902EB122F9F9D200194972 /* zh-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-HK"; path = "zh-HK.lproj/Localizable.strings"; sourceTree = "<group>"; };
-		FD902EB322FAA01300194972 /* UnifiedNativeAdView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UnifiedNativeAdView.xib; sourceTree = "<group>"; };
 		FD902EB522FAABDC00194972 /* Ad+Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ad+Config.swift"; sourceTree = "<group>"; };
+		FD902EB822FAB58000194972 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Transactions.strings; sourceTree = "<group>"; };
+		FD902EBA22FAB58C00194972 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/UnifiedNativeAdView.xib; sourceTree = "<group>"; };
+		FD902EBD22FAB59200194972 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/UnifiedNativeAdView.strings; sourceTree = "<group>"; };
+		FD902EBF22FAB59400194972 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/UnifiedNativeAdView.strings"; sourceTree = "<group>"; };
+		FD902EC122FAB59600194972 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/UnifiedNativeAdView.strings"; sourceTree = "<group>"; };
+		FD902EC322FAB59700194972 /* zh-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-HK"; path = "zh-HK.lproj/UnifiedNativeAdView.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -380,7 +384,7 @@
 		FD902EB222FAA00700194972 /* NativeAdView */ = {
 			isa = PBXGroup;
 			children = (
-				FD902EB322FAA01300194972 /* UnifiedNativeAdView.xib */,
+				FD902EBB22FAB58C00194972 /* UnifiedNativeAdView.xib */,
 			);
 			path = NativeAdView;
 			sourceTree = "<group>";
@@ -480,7 +484,7 @@
 				FD902E9B22F9E6CC00194972 /* EditExpense.storyboard in Resources */,
 				FD2254BC22E0FCAE006301CE /* Assets.xcassets in Resources */,
 				FD902E9422F9E6C100194972 /* Transactions.storyboard in Resources */,
-				FD902EB422FAA01300194972 /* UnifiedNativeAdView.xib in Resources */,
+				FD902EB922FAB58C00194972 /* UnifiedNativeAdView.xib in Resources */,
 				FD22550022E1B67C006301CE /* TransactionCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -669,10 +673,10 @@
 			isa = PBXVariantGroup;
 			children = (
 				FD902E9522F9E6C100194972 /* Base */,
-				FD902E9822F9E6C300194972 /* en */,
 				FD902E9A22F9E6C500194972 /* zh-Hans */,
 				FD902EA922F9F9CA00194972 /* zh-Hant */,
 				FD902EAE22F9F9D100194972 /* zh-HK */,
+				FD902EB822FAB58000194972 /* en */,
 			);
 			name = Transactions.storyboard;
 			sourceTree = "<group>";
@@ -698,6 +702,18 @@
 				FD902EB122F9F9D200194972 /* zh-HK */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		FD902EBB22FAB58C00194972 /* UnifiedNativeAdView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FD902EBA22FAB58C00194972 /* Base */,
+				FD902EBD22FAB59200194972 /* en */,
+				FD902EBF22FAB59400194972 /* zh-Hans */,
+				FD902EC122FAB59600194972 /* zh-Hant */,
+				FD902EC322FAB59700194972 /* zh-HK */,
+			);
+			name = UnifiedNativeAdView.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

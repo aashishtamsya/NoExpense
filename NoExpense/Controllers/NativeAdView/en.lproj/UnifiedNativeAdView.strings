@@ -1,0 +1,21 @@
+
+/* Class = "UIButton"; normalTitle = "Install"; ObjectID = "E5w-YA-UY8"; */
+"E5w-YA-UY8.normalTitle" = "Install";
+
+/* Class = "UILabel"; text = "Advertiser"; ObjectID = "GTT-Yh-eSq"; */
+"GTT-Yh-eSq.text" = "Advertiser";
+
+/* Class = "UILabel"; text = "Body that is really really long and can take up to two lines or sometimes even more."; ObjectID = "PEQ-D9-2Vv"; */
+"PEQ-D9-2Vv.text" = "Body that is really really long and can take up to two lines or sometimes even more.";
+
+/* Class = "UILabel"; text = "Price"; ObjectID = "Ysb-of-cat"; */
+"Ysb-of-cat.text" = "Price";
+
+/* Class = "UILabel"; text = "Headline"; ObjectID = "beR-eV-DX1"; */
+"beR-eV-DX1.text" = "Headline";
+
+/* Class = "UILabel"; text = "Store"; ObjectID = "hwF-UL-Q8H"; */
+"hwF-UL-Q8H.text" = "Store";
+
+/* Class = "UILabel"; text = "Ad"; ObjectID = "lp1-oz-XOs"; */
+"lp1-oz-XOs.text" = "Ad";

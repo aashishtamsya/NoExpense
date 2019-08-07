@@ -183,6 +183,50 @@
                                     <constraint firstItem="pBw-t4-duU" firstAttribute="leading" secondItem="ll4-QP-3N2" secondAttribute="leading" id="u4J-GT-Q8y"/>
                                 </constraints>
                             </scrollView>
+                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="xG5-MN-jFv">
+                                <rect key="frame" x="20" y="232.33333333333331" width="374" height="207.33333333333331"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="c5T-AC-12M">
+                                        <rect key="frame" x="67.333333333333329" y="0.0" width="239.66666666666669" height="151.33333333333334"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🍠" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e2V-vX-u9H">
+                                                <rect key="frame" x="79.333333333333329" y="0.0" width="80.999999999999986" height="89.666666666666671"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="75"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sweet potato!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MV0-TP-bJd">
+                                                <rect key="frame" x="49.666666666666671" y="97.666666666666686" width="140.33333333333331" height="26.333333333333329"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You need to add some expenses!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qyS-81-bLu">
+                                                <rect key="frame" x="0.0" y="132" width="239.66666666666666" height="19.333333333333343"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NBo-56-79r">
+                                        <rect key="frame" x="119.66666666666666" y="167.33333333333337" width="135" height="40"/>
+                                        <color key="backgroundColor" red="0.1137254902" green="0.61176470589999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="135" id="JKI-eh-ciA"/>
+                                            <constraint firstAttribute="height" constant="40" id="gs7-Hg-t2d"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="ADD EXPENSE">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="emptyStateButtonSelected:" destination="1fc-Ud-RgH" eventType="touchUpInside" id="03E-yi-aUp"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -190,6 +234,9 @@
                             <constraint firstItem="ll4-QP-3N2" firstAttribute="leading" secondItem="BaG-d7-xWz" secondAttribute="leading" id="DPf-Oi-aYr"/>
                             <constraint firstAttribute="trailing" secondItem="ll4-QP-3N2" secondAttribute="trailing" id="F1X-G4-4Aj"/>
                             <constraint firstItem="pBw-t4-duU" firstAttribute="width" secondItem="BaG-d7-xWz" secondAttribute="width" id="GDj-yH-iLx"/>
+                            <constraint firstItem="xG5-MN-jFv" firstAttribute="centerX" secondItem="sdC-Gz-WwN" secondAttribute="centerX" id="LDh-Qc-Xj8"/>
+                            <constraint firstItem="xG5-MN-jFv" firstAttribute="centerY" secondItem="sdC-Gz-WwN" secondAttribute="centerY" id="QQc-bl-0FX"/>
+                            <constraint firstItem="xG5-MN-jFv" firstAttribute="leading" secondItem="sdC-Gz-WwN" secondAttribute="leading" constant="19.999999999999986" id="Xvh-Pj-NyZ"/>
                             <constraint firstItem="Tt9-ry-fxo" firstAttribute="top" secondItem="ll4-QP-3N2" secondAttribute="bottom" id="mgq-Rx-fCk"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="sdC-Gz-WwN"/>
@@ -201,6 +248,11 @@
                     </navigationItem>
                     <connections>
                         <outlet property="cancelBarButton" destination="fWc-wZ-qhF" id="xFu-PY-Ky9"/>
+                        <outlet property="emptyButton" destination="NBo-56-79r" id="czC-EV-ApH"/>
+                        <outlet property="emptyDescriptionLabel" destination="qyS-81-bLu" id="eN8-wR-Sqv"/>
+                        <outlet property="emptyIconLabel" destination="e2V-vX-u9H" id="ptG-FL-NRp"/>
+                        <outlet property="emptyStackView" destination="xG5-MN-jFv" id="aLp-7l-rwa"/>
+                        <outlet property="emptyTitleLabel" destination="MV0-TP-bJd" id="xG5-Xc-sEP"/>
                         <outlet property="nativeAdPlaceholder" destination="koy-Bl-6yU" id="cKy-7c-TkW"/>
                         <outlet property="outerContentView" destination="pBw-t4-duU" id="saH-o6-bQV"/>
                         <outlet property="scrollView" destination="ll4-QP-3N2" id="g5R-od-4zk"/>

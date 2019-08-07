@@ -9,6 +9,7 @@
 import UIKit
 import PieCharts
 import GoogleMobileAds
+import Reachability
 
 final class OverviewViewController: ViewController, BindableType {
   @IBOutlet weak fileprivate var totalExpenseChart: PieChart!
@@ -18,10 +19,17 @@ final class OverviewViewController: ViewController, BindableType {
   @IBOutlet weak fileprivate var scrollView: UIScrollView!
   @IBOutlet weak fileprivate var outerContentView: UIView!
   
+  @IBOutlet weak fileprivate var emptyStackView: UIStackView!
+  @IBOutlet weak fileprivate var emptyButton: UIButton!
+  @IBOutlet weak fileprivate var emptyTitleLabel: UILabel!
+  @IBOutlet weak fileprivate var emptyDescriptionLabel: UILabel!
+  @IBOutlet weak fileprivate var emptyIconLabel: UILabel!
+  
   var viewModel: OverviewViewModel!
   fileprivate var adLoader: GADAdLoader!
   fileprivate var heightConstraint: NSLayoutConstraint?
   fileprivate var nativeAdView: GADUnifiedNativeAdView!
+  fileprivate let reachability = Reachability()!
 
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
@@ -30,6 +38,13 @@ final class OverviewViewController: ViewController, BindableType {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    NotificationCenter.default.addObserver(self, selector: #selector(OverviewViewController.reachabilityChanged(_:)), name: .reachabilityChanged, object: reachability)
+    do {
+      try reachability.startNotifier()
+    } catch {
+      print("could not start reachability notifier")
+    }
+    check(reachability: reachability)
     guard let nibObjects = Bundle.main.loadNibNamed("UnifiedNativeAdView", owner: nil, options: nil),
       let adView = nibObjects.first as? GADUnifiedNativeAdView else {
         assert(false, "Could not load nib file for adView")
@@ -52,6 +67,18 @@ final class OverviewViewController: ViewController, BindableType {
         self.totalExpenseChart.models = models
       })
       .disposed(by: rx.disposeBag)
+  }
+  
+  deinit {
+    reachability.stopNotifier()
+    NotificationCenter.default.removeObserver(self)
+  }
+}
+// MARK: - Selectors
+private extension OverviewViewController {
+  @objc func reachabilityChanged(_ notification: Notification? = nil) {
+    guard let reachability = notification?.object as? Reachability else { return }
+    check(reachability: reachability)
   }
 }
 
@@ -117,8 +144,19 @@ extension ViewController: GADAdLoaderDelegate {
     print("\(adLoader) failed with error: \(error.localizedDescription)")
   }
 }
-
+// MARK: - Private Methods
 private extension OverviewViewController {
+  func check(reachability: Reachability, isRefresh: Bool = false) {
+    DispatchQueue.main.asyncAfter(deadline: isRefresh ? .now() + .seconds(2) : .now()) { [weak self] in
+      switch reachability.connection {
+      case .wifi, .cellular:
+        self?.emptyState(hide: true)
+      case .none:
+        self?.emptyState(title: "InternetConnectionErrorTitle".localized, message: "InternetConnectionError".localized, icon: "🔥", button: "RetryTitle".localized)
+      }
+    }
+  }
+  
   func setAdView(_ view: GADUnifiedNativeAdView) {
     nativeAdView = view
     nativeAdPlaceholder.addSubview(nativeAdView)
@@ -138,5 +176,22 @@ private extension OverviewViewController {
     let request = GADRequest()
     request.testDevices = [kGADSimulatorID]
     adLoader.load(request)
+  }
+  
+  func emptyState(title: String? = nil, message: String? = nil, icon: String? = nil, button: String? = nil, hide: Bool = false) {
+    scrollView.isHidden = !hide
+    emptyStackView.isHidden = hide
+    guard !hide else { return }
+    emptyTitleLabel.text = title
+    emptyDescriptionLabel.text = message
+    emptyIconLabel.text = icon
+    emptyButton.setTitle(button, for: .normal)
+  }
+}
+
+// MARK: - @IBActions
+private extension OverviewViewController {
+  @IBAction func emptyStateButtonSelected(_ sender: UIButton) {
+    check(reachability: reachability)
   }
 }

@@ -6,6 +6,10 @@
   Copyright © 2019 Aashish Tamsya. All rights reserved.
 */
 
+"InternetConnectionError"        = "似乎是與您的網絡連接有問題。";
+"InternetConnectionErrorTitle"   = "你離線";
+"RetryTitle"                     = "再試一次";
+
 "Today" = "今天";
 
 "Cancel" = "取消";

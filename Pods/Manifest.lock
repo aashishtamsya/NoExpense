@@ -60,6 +60,7 @@ PODS:
   - "NSObject+Rx (5.0.0)":
     - RxSwift (~> 5.0)
   - PieCharts (0.0.7)
+  - ReachabilitySwift (4.3.1)
   - Realm (3.17.1):
     - Realm/Headers (= 3.17.1)
   - Realm/Headers (3.17.1)
@@ -89,6 +90,7 @@ DEPENDENCIES:
   - Google-Mobile-Ads-SDK
   - "NSObject+Rx (~> 5.0.0)"
   - PieCharts (~> 0.0.7)
+  - ReachabilitySwift (~> 4.3.1)
   - RealmSwift (~> 3.17.1)
   - RxCocoa (~> 5.0.0)
   - RxDataSources (~> 4.0.1)
@@ -111,6 +113,7 @@ SPEC REPOS:
     - nanopb
     - "NSObject+Rx"
     - PieCharts
+    - ReachabilitySwift
     - Realm
     - RealmSwift
     - RxCocoa
@@ -134,6 +137,7 @@ SPEC CHECKSUMS:
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   "NSObject+Rx": 6151a97d171f7187c4183746acc42d9451952a7b
   PieCharts: 30e50dfa7dc19e5b84e9878d32089673ef5d0453
+  ReachabilitySwift: 4032e2f59586e11e3b0ebe15b167abdd587a388b
   Realm: c204f1a890f07dea43b14132a6aad118c054b8f2
   RealmSwift: 4d3c9233544b9cd08a8913e0872b9038eb99b054
   RxCocoa: fcf32050ac00d801f34a7f71d5e8e7f23026dcd8
@@ -144,6 +148,6 @@ SPEC CHECKSUMS:
   RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
   SwiftDate: 8d4f14bf1ef68e95094511504856547bf9e3e1a6
 
-PODFILE CHECKSUM: 8926bff111ba02fe236cf7e5663f1fdee61f0158
+PODFILE CHECKSUM: f1bcca146b8c4b757505760d0d0dd450d347e2ed
 
 COCOAPODS: 1.7.3

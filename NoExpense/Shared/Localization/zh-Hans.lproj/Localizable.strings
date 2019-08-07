@@ -5,36 +5,11 @@
   Created by Aashish Tamsya on 19/07/19.
   Copyright © 2019 Aashish Tamsya. All rights reserved.
 */
-
-"AMomentAgo" = "刚才";
-"AYearAgo"   = "％@ 年前";
-"YearsAgo"   = "％@ 年前";
-"AMonthAgo"  = "％@ 月前";
-"MonthsAgo"  = "％@ 月前";
-"AWeekAgo"   = "％@ 周前";
-"WeeksAgo"   = "％@ 周前";
-"ADayAgo"    = "昨天";
-"DaysAgo"    = "％@ 天前";
-"AHourAgo"   = "％@ 小时前";
-"HoursAgo"   = "％@ 小时前";
-"AMinuteAgo" = "％@ 分钟前";
-"MinutesAgo" = "％@ 分钟前";
+"InternetConnectionError"        = "似乎是与您的网络连接有问题。";
+"InternetConnectionErrorTitle"   = "你离线";
+"RetryTitle"                     = "再试一次";
 
 "Today" = "今天";
-
-"AMomentBefore" = "一会儿";
-"AYearBefore"   = "在％@年";
-"YearsBefore"   = "在％@年";
-"AMonthBefore"  = "在％@月";
-"MonthsBefore"  = "在％@个月";
-"AWeekBefore"   = "在％@周";
-"WeeksBefore"   = "在％@周";
-"ADayBefore"    = "明天";
-"DaysBefore"    = "在％@天";
-"AHourBefore"   = "在％@小时";
-"HoursBefore"   = "在％@小时";
-"AMinuteBefore" = "在％@分钟";
-"MinutesBefore" = "在％@分钟";
 
 "Cancel" = "取消";
 "TakeAPhoto" = "拍张照片";

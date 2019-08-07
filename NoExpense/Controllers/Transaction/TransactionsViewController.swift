@@ -142,7 +142,7 @@ final class TransactionsViewController: ViewController, BindableType {
 // MARK: - Private Methods
 private extension TransactionsViewController {
   func createAndLoadInterstitial() -> GADInterstitial {
-    var interstitial = GADInterstitial(adUnitID: "ca-app-pub-2476036802725781/3456716519")
+    let interstitial = GADInterstitial(adUnitID: "ca-app-pub-2476036802725781/3456716519")
     interstitial.delegate = self
     let request = GADRequest()
     request.testDevices = [kGADSimulatorID]

@@ -16,4 +16,6 @@ enum AnalyticsEvent: String {
   case edit_transaction_viewed
   case transcation_list_viewed
   case overview_viewed
+  
+  case interstitial_ad_was_not_ready
 }

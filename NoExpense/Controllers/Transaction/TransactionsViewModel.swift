@@ -27,6 +27,7 @@ struct TransactionsViewModel {
   
   func onDelete(transaction: TransactionItem) -> CocoaAction {
     logEventAsync(eventType: .transaction_removed)
+    UserDefaults.standard.incrementShowAdCount()
     return CocoaAction {
       return self.transactionService.delete(transaction: transaction).map { _ in }
     }
@@ -34,6 +35,9 @@ struct TransactionsViewModel {
   
   func onUpdate(transcation: TransactionItem, isUpdate: Bool = false) -> Action<UpdateInfo, Void> {
     _ = isUpdate ? logEventAsync(eventType: .transaction_updated) : logEventAsync(eventType: .transaction_added)
+    if isUpdate {
+      UserDefaults.standard.incrementShowAdCount()
+    }
     return Action { newUpdateInfo in
       return self.transactionService.update(transcation: transcation, updateInfo: newUpdateInfo).map { _ in }
     }

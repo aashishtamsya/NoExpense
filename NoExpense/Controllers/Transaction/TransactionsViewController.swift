@@ -11,6 +11,7 @@ import RxSwift
 import RxDataSources
 import Action
 import NSObject_Rx
+import GoogleMobileAds
 
 final class TransactionsViewController: ViewController, BindableType {
   
@@ -27,7 +28,8 @@ final class TransactionsViewController: ViewController, BindableType {
   @IBOutlet weak fileprivate var thisMonthExpenseButton: UIButton!
 
   var viewModel: TransactionsViewModel!
-  var dataSource: RxTableViewSectionedAnimatedDataSource<TransactionSection>!
+  fileprivate var dataSource: RxTableViewSectionedAnimatedDataSource<TransactionSection>!
+  fileprivate var interstitial: GADInterstitial!
   
   var isTableViewEmpty: Bool {
     get {
@@ -38,10 +40,12 @@ final class TransactionsViewController: ViewController, BindableType {
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
     logEventAsync(eventType: .transcation_list_viewed)
+    showAd()
   }
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    interstitial = createAndLoadInterstitial()
     
     tableView.rowHeight = UITableView.automaticDimension
     tableView.estimatedRowHeight = 60
@@ -87,6 +91,7 @@ final class TransactionsViewController: ViewController, BindableType {
     
     tableView.rx.itemDeleted
       .map { [unowned self] indexPath in
+        self.showAd()
         return try! self.dataSource.model(at: indexPath) as! TransactionItem
       }
       .subscribe(viewModel.deleteAction.inputs)
@@ -132,5 +137,57 @@ final class TransactionsViewController: ViewController, BindableType {
       .map { !$0 }
       .bind(to: emptyStackView.rx.isHidden)
       .disposed(by: rx.disposeBag)
+  }
+}
+// MARK: - Private Methods
+private extension TransactionsViewController {
+  func createAndLoadInterstitial() -> GADInterstitial {
+    var interstitial = GADInterstitial(adUnitID: "ca-app-pub-2476036802725781/3456716519")
+    interstitial.delegate = self
+    let request = GADRequest()
+    request.testDevices = [kGADSimulatorID]
+    interstitial.load(request)
+    return interstitial
+  }
+  
+  func showAd() {
+    guard checkForAds(), interstitial.isReady else {
+      logEventAsync(eventType: .interstitial_ad_was_not_ready)
+      return
+    }
+    interstitial.present(fromRootViewController: self)
+  }
+}
+
+extension TransactionsViewController: GADInterstitialDelegate {
+  /// Tells the delegate an ad request succeeded.
+  func interstitialDidReceiveAd(_ ad: GADInterstitial) {
+    print("interstitialDidReceiveAd")
+  }
+  
+  /// Tells the delegate an ad request failed.
+  func interstitial(_ ad: GADInterstitial, didFailToReceiveAdWithError error: GADRequestError) {
+    print("interstitial:didFailToReceiveAdWithError: \(error.localizedDescription)")
+  }
+  
+  /// Tells the delegate that an interstitial will be presented.
+  func interstitialWillPresentScreen(_ ad: GADInterstitial) {
+    print("interstitialWillPresentScreen")
+  }
+  
+  /// Tells the delegate the interstitial is to be animated off the screen.
+  func interstitialWillDismissScreen(_ ad: GADInterstitial) {
+    print("interstitialWillDismissScreen")
+  }
+  
+  /// Tells the delegate the interstitial had been animated off the screen.
+  func interstitialDidDismissScreen(_ ad: GADInterstitial) {
+    interstitial = createAndLoadInterstitial()
+  }
+  
+  /// Tells the delegate that a user click will open another app
+  /// (such as the App Store), backgrounding the current app.
+  func interstitialWillLeaveApplication(_ ad: GADInterstitial) {
+    print("interstitialWillLeaveApplication")
   }
 }

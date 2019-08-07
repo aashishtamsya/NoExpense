@@ -56,6 +56,7 @@
 		FD902E9B22F9E6CC00194972 /* EditExpense.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD902E9D22F9E6CC00194972 /* EditExpense.storyboard */; };
 		FD902EA422F9E6FD00194972 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FD902EA622F9E6FD00194972 /* Localizable.strings */; };
 		FD902EB422FAA01300194972 /* UnifiedNativeAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD902EB322FAA01300194972 /* UnifiedNativeAdView.xib */; };
+		FD902EB622FAABDC00194972 /* Ad+Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD902EB522FAABDC00194972 /* Ad+Config.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -145,6 +146,7 @@
 		FD902EB022F9F9D200194972 /* zh-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-HK"; path = "zh-HK.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		FD902EB122F9F9D200194972 /* zh-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-HK"; path = "zh-HK.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		FD902EB322FAA01300194972 /* UnifiedNativeAdView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UnifiedNativeAdView.xib; sourceTree = "<group>"; };
+		FD902EB522FAABDC00194972 /* Ad+Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ad+Config.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -361,6 +363,7 @@
 				FD2254E022E18F7D006301CE /* Extensions */,
 				FD2254FC22E1B657006301CE /* Cells */,
 				FD22550B22E1EADB006301CE /* Localization */,
+				FD902EB522FAABDC00194972 /* Ad+Config.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -594,6 +597,7 @@
 				FD3D7CB822E39AD600CE5B10 /* OverviewType.swift in Sources */,
 				FD2254E522E1911A006301CE /* EditExpenseViewController.swift in Sources */,
 				FD2254DF22E10C8C006301CE /* SceneTransitionType.swift in Sources */,
+				FD902EB622FAABDC00194972 /* Ad+Config.swift in Sources */,
 				FD2254B522E0FCAC006301CE /* AppDelegate.swift in Sources */,
 				FD3D7CDB22E47A2E00CE5B10 /* UIImage+Extensions.swift in Sources */,
 				FD2254F522E19B59006301CE /* TransactionItem.swift in Sources */,

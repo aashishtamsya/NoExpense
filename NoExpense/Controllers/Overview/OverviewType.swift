@@ -9,6 +9,12 @@
 import Foundation
 
 enum OverviewType: String {
-  case totalExpense
-  case thisMonth
+  case totalExpense = "TotalExpense"
+  case thisMonth = "ThisMonth"
+  
+  var title: String {
+    get {
+      return rawValue.localized
+    }
+  }
 }

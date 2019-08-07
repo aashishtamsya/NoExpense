@@ -19,6 +19,7 @@ final class OverviewViewController: ViewController, BindableType {
   @IBOutlet weak fileprivate var nativeAdPlaceholder: UIView!
   @IBOutlet weak fileprivate var scrollView: UIScrollView!
   @IBOutlet weak fileprivate var outerContentView: UIView!
+  @IBOutlet weak fileprivate var headerTitleLabel: UILabel!
   
   @IBOutlet weak fileprivate var emptyStackView: UIStackView!
   @IBOutlet weak fileprivate var emptyTitleLabel: UILabel!
@@ -38,6 +39,7 @@ final class OverviewViewController: ViewController, BindableType {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    headerTitleLabel.text = viewModel.overviewType.title
     navigationItem.title = "Overview".localized
     Reachability.rx.isReachable
       .subscribe(onNext: { [weak self] isReachable in
@@ -52,6 +54,7 @@ final class OverviewViewController: ViewController, BindableType {
     guard let nibObjects = Bundle.main.loadNibNamed("UnifiedNativeAdView", owner: nil, options: nil),
       let adView = nibObjects.first as? GADUnifiedNativeAdView else {
         assert(false, "Could not load nib file for adView")
+        return
     }
     setAdView(adView)
     refreshAd()

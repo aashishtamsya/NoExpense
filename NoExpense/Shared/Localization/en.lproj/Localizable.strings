@@ -8,6 +8,9 @@
 
 "Overview" = "Overview";
 
+"TotalExpense" = "Total Expense";
+"ThisMonth" = "This Month";
+
 "InternetConnectionError"        = "There seems to be a problem with your network connection.";
 "InternetConnectionErrorTitle"   = "You're Offline";
 "RetryTitle"                     = "Try Again";

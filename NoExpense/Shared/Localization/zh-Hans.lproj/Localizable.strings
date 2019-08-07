@@ -8,6 +8,9 @@
 
 "Overview" = "概观";
 
+"TotalExpense" = "总费用";
+"ThisMonth" = "这个月";
+
 "InternetConnectionError"        = "似乎是与您的网络连接有问题。";
 "InternetConnectionErrorTitle"   = "你离线";
 "RetryTitle"                     = "再试一次";

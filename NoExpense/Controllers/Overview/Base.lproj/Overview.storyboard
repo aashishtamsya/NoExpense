@@ -236,6 +236,7 @@
                         <outlet property="emptyIconLabel" destination="e2V-vX-u9H" id="ptG-FL-NRp"/>
                         <outlet property="emptyStackView" destination="xG5-MN-jFv" id="aLp-7l-rwa"/>
                         <outlet property="emptyTitleLabel" destination="MV0-TP-bJd" id="xG5-Xc-sEP"/>
+                        <outlet property="headerTitleLabel" destination="CEz-lw-fCF" id="7Wk-sG-wtB"/>
                         <outlet property="nativeAdPlaceholder" destination="koy-Bl-6yU" id="cKy-7c-TkW"/>
                         <outlet property="outerContentView" destination="pBw-t4-duU" id="saH-o6-bQV"/>
                         <outlet property="scrollView" destination="ll4-QP-3N2" id="g5R-od-4zk"/>
